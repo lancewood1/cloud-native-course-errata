@@ -76,12 +76,13 @@ that occur when pushing an application?
 - If you experience 404 error when accessing your controller,
   think about the rules of component scanning
 - Add "message" property to application.yml (or application.properties)
-  and use it as a string that gets returned
+  and use it as a string that gets returned (instead of "hello world")
 - Use different port (instead of default port of 8080) 
   by setting "server.port" property
 - Use customer banner: create one from patorjk.com 
  (google "spring boot banner patorjk")
-- Use spring profile: "dev" and "production"
+- Create spring profile: "dev" and "production" from which different
+  message value can be extracted
 - Create external property file
 - Deploy the application to the cloud and run with dev profile
 - Create manifest file using "create-app-manifest" 
