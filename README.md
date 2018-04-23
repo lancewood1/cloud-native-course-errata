@@ -95,6 +95,7 @@ that occur when pushing an application?
 - What are the 4 major features Spring Boot provide?
 
 #### Spring Boot Internals
+- Which auto-configuration is used for auto-configuring data source object?
 
 #### Data Access Lab
 - Name some of the Enterprise Application Patterns implemented by the Snippet Manager.
