@@ -38,7 +38,7 @@ that occur when pushing an application?
 - What is the difference between "restart" and "restaging"? 
 - What is the difference between "managed service" (service found
   in the "cf marketplace") and "non-managed service" ("user provided service")? 
-- What are the 3 use cases of "user provided service"?
+- What are the 3 use cases of "user provided service"? ("cf cups -h")
 - From an application perspective, are managed services 
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
