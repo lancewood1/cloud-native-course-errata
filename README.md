@@ -44,6 +44,12 @@ that occur when pushing an application?
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
 
+### Buildpacks
+
+- What are the buildpack scripts that get executed when creating a droplet?
+  (Google "pcf understanding buildpacks")
+- What is the script that gets omitted when you deploy a docker image?
+
 ### Blue-Green deployment
 - Can an application have multiple routes?
 - Can a route be applied to multiple applications?
