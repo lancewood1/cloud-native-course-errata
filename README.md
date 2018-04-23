@@ -7,7 +7,7 @@
 - How many containers are needed for pushing an app?
 - Why do you see "container gets created and destroyed" as part of pushing app?
 - Can you find diagram that shows the sequence of internal operations 
-that occur when pusing an application?
+that occur when pushing an application?
 - What is the "org"/"space" structure in your PCF installation?
 - Why do you have to use "--random-route"?
 
