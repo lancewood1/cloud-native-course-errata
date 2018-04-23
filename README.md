@@ -21,7 +21,7 @@ that occur when pushing an application?
 - How does this change how you access logs today? At scale? 
 
 ### Scaling
-- What is the perfered, "scaling out" or "scaling up"?  Why?
+- What is the preferred, "scaling out" or "scaling up"?  Why?
 - What the origin code(s) that show "number of instances increase/decreased"?
 - When inceasing number of instances, do existing instances get restarted? 
   How do you find that out? What about the case of decreasing number of
