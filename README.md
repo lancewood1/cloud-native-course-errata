@@ -85,7 +85,8 @@ that occur when pushing an application?
  (google "spring boot banner patorjk")
 - Create spring profile: "dev" and "production" from which different
   message value can be extracted
-- Create external property file
+- Create external property file(s) as opposed to the property files
+  inside the jar file
 - Deploy the application to the cloud and run with dev profile
 - Create manifest file using "create-app-manifest" 
 - Deploy the app using the newly created manifest file
