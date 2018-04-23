@@ -11,6 +11,24 @@ that occur when pushing an application?
 - What is the "org"/"space" structure in your PCF installation?
 - Why do you have to use "--random-route"?
 
+### Logging
+- Where should your application write logs?
+- What are some of the different origin codes seen in the log?
+- How does this change how you access logs today? At scale? 
+
+### Scaling
+- What is the perfered, "scaling out" or "scaling up"?  Why?
+- What the origin code(s) that show "number of instances increase/decreased"?
+- When inceasing number of instances, do existing instances restarted? 
+  How do you find that out? What about the case of decreasing number of
+  instances?
+- How do you recover failing application instances today?
+- What effect does this have on your application design?
+
+### HA
+- How could you determine if your application has been crashing?
+- What are 4 HA features in PCF?
+
 ### Spring Boot
 #### Spring vs. Spring Boot
 - Add "message" property to application.yml 
