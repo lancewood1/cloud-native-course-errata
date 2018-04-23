@@ -73,6 +73,8 @@ that occur when pushing an application?
   if you are creating a Spring Boot app from "start.spring.io".
   If you are creating an Spring Boot app from internal "go/moneta",
   it is already using "Spring Boot 1.5.x"
+- What are three ways to config Spring bean? What are the use cases
+  for each scheme?
 - Add "message" property to application.yml (or application.properties)
 - Use different port (instead of default port of 8080) 
   by setting "server.port" property
