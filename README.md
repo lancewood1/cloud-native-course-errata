@@ -58,7 +58,7 @@ that occur when pushing an application?
 - Can an application have multiple routes?
 - Can a route be applied to multiple applications?
 - Can a route exist without an application associated with it?
-  (Take a look "cf create-route" command)
+  (See "cf routes" and "cf create-route" commands.)
 - How can I delete all orphaned routes? 
   (See if there is "cf" command for this.)
 
