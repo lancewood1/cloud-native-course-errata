@@ -67,8 +67,9 @@ that occur when pushing an application?
 
 ### Spring Boot
 #### Spring vs. Spring Boot
-- Add "message" property to application.yml 
-- Use different port
+- Skip the first part of the lab (creating Spring MVC app)
+- Add "message" property to application.yml (or application.properties)
+- Use different port (instead of default port of 8080)
 - Use customer banner: create one from patorjk.com 
  (google "spring boot banner patorjk")
 - Use spring profile: "dev" and "production"
