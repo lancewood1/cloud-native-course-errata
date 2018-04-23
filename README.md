@@ -14,7 +14,8 @@ that occur when pushing an application?
 ### Logging
 - Where should your application write logs? Is it a good practice 
   write logs to a file?
-- What are some of the different origin codes seen in the log?
+- What are some of the different origin codes seen in the log? 
+  (Google "PCF log types"!)
 - How does this change how you access logs today? At scale? 
 
 ### Scaling
