@@ -74,7 +74,8 @@ that occur when pushing an application?
   If you are creating an Spring Boot app from internal "go/moneta",
   it is already using "Spring Boot 1.5.x"
 - Add "message" property to application.yml (or application.properties)
-- Use different port (instead of default port of 8080)
+- Use different port (instead of default port of 8080) 
+  by using "server.port" property
 - Use customer banner: create one from patorjk.com 
  (google "spring boot banner patorjk")
 - Use spring profile: "dev" and "production"
