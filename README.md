@@ -73,9 +73,6 @@ that occur when pushing an application?
   if you are creating a Spring Boot app from "start.spring.io".
   If you are creating an Spring Boot app from internal "go/moneta",
   it is already using "Spring Boot 1.5.x"
-- What are three ways to config Spring bean? What are the use cases
-  for each scheme?
-- What are the 4 major features Spring Boot provide?
 - Add "message" property to application.yml (or application.properties)
 - Use different port (instead of default port of 8080) 
   by setting "server.port" property
@@ -86,6 +83,10 @@ that occur when pushing an application?
 - Deploy the application to the cloud and run with dev profile
 - Create manifest file using "create-app-manifest" 
 - Deploy the app using the newly created manifest file
+
+- What are three ways to config Spring bean? What are the use cases
+  for each scheme?
+- What are the 4 major features Spring Boot provide?
 
 #### Spring Boot Internals
 
