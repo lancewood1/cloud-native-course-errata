@@ -61,6 +61,7 @@ that occur when pushing an application?
   (See "cf routes" and "cf create-route" commands.)
 - How can I delete all orphaned routes? 
   (See if there is "cf" command for this.)
+- Is a route unique per PCF installation, per org, or per space?
 - What are the constraints of Blue-Green deployment?
 
 
