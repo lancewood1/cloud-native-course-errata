@@ -23,7 +23,7 @@ that occur when pushing an application?
   How do you find that out? What about the case of decreasing number of
   instances?
 - How do you recover failing application instances today?
-- What effect does this have on your application design?
+- What effect does this have on your application design? 
 
 ### HA
 - How could you determine if your application has been crashing?
