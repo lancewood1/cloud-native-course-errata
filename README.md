@@ -107,9 +107,9 @@ that occur when pushing an application?
 #### Actuator
 - Skip the "Challenge" part of the lab in the document
 - Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
-- Why is `management.security.enabled` required to be set in `application.yml`?
+- Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
 - Add MemoryHealthIndicator: if the ratio of freeMemory/totalMemory 
-  is less than 0.9, return DOWN status
+  is less than 0.9, return DOWN status. Otherwise, return UP status.
 
 ### Spring Cloud
 
