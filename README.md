@@ -28,6 +28,7 @@ that occur when pushing an application?
 ### HA
 - How could you determine if your application has been crashing?
 - What are 4 HA features in PCF?
+- Can you find "PCF architecture diagram"? (Google it!)
 
 ### Spring Boot
 #### Spring vs. Spring Boot
