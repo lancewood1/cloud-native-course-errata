@@ -69,6 +69,10 @@ that occur when pushing an application?
 #### Spring vs. Spring Boot
 - Skip the first part of the lab (creating Spring MVC app). 
   Just do the second part of the lab (creating Spring Boot app).
+- Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
+  if you are creating a Spring Boot app from "start.spring.io".
+  If you are creating an Spring Boot app from internal "go/moneta",
+  it is already using "Spring Boot 1.5.x"
 - Add "message" property to application.yml (or application.properties)
 - Use different port (instead of default port of 8080)
 - Use customer banner: create one from patorjk.com 
