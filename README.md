@@ -83,7 +83,6 @@ that occur when pushing an application?
 - Deploy the application to the cloud and run with dev profile
 - Create manifest file using "create-app-manifest" 
 - Deploy the app using the newly created manifest file
-
 - What are three ways to config Spring bean? What are the use cases
   for each scheme?
 - What are the 4 major features Spring Boot provide?
