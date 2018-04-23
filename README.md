@@ -57,6 +57,7 @@ that occur when pushing an application?
 - Can a route exist without an application associated with it?
   (Take a look "cf create-route" command)
 - How can I delete all orphaned routes? 
+  (See if there is "cf" command for this.)
 
 
 ### Spring Boot
