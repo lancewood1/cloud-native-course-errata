@@ -12,14 +12,15 @@ that occur when pushing an application?
 - Why do you have to use "--random-route"?
 
 ### Logging
-- Where should your application write logs?
+- Where should your application write logs? Is it a good practice 
+  write logs to a file?
 - What are some of the different origin codes seen in the log?
 - How does this change how you access logs today? At scale? 
 
 ### Scaling
 - What is the perfered, "scaling out" or "scaling up"?  Why?
 - What the origin code(s) that show "number of instances increase/decreased"?
-- When inceasing number of instances, do existing instances restarted? 
+- When inceasing number of instances, do existing instances get restarted? 
   How do you find that out? What about the case of decreasing number of
   instances?
 - How do you recover failing application instances today?
