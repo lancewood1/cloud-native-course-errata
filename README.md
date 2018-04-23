@@ -44,6 +44,13 @@ that occur when pushing an application?
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
 
+### Blue-Green deployment
+- Can an application have multiple routes?
+- Can a route be applied to multiple applications?
+- Can a route exist without an application associated with it?
+  (Take a look "cf create-route" command)
+- How can I delete all orphaned routes? 
+
 
 ### Spring Boot
 #### Spring vs. Spring Boot
