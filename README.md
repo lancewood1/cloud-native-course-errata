@@ -75,6 +75,7 @@ that occur when pushing an application?
   it is already using "Spring Boot 1.5.x"
 - What are three ways to config Spring bean? What are the use cases
   for each scheme?
+- What are the 4 major features Spring Boot provide?
 - Add "message" property to application.yml (or application.properties)
 - Use different port (instead of default port of 8080) 
   by setting "server.port" property
