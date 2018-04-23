@@ -37,7 +37,8 @@ that occur when pushing an application?
 - What does "create service" do? What about "bind service"?
 - What is the difference between "restart" and "restaging"? 
 - What is the difference between "managed service" and "non-managed service"? 
-  Is there a way to make your "non-managed service" "managed service"?
+- What are the 3 use cases of "user provided service"?
+- Is there a way to make your "non-managed service" "managed service"?
 
 
 ### Spring Boot
