@@ -48,7 +48,7 @@ that occur when pushing an application?
 
 - What are the buildpack scripts that get executed when creating a droplet?
   (Google "pcf understanding buildpacks")
-- What is the script that gets omitted when you deploy a docker image?
+- What is the buildpack script that gets omitted when you deploy a docker image?
 - What is the pros and cons of using buildpack as opposed to docker image?
 
 ### Blue-Green deployment
