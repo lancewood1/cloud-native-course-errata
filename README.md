@@ -125,8 +125,8 @@ that occur when pushing an application? (Google "Diego architecture".)
 - You will authenticate with GitHub using ssh keys. Follow 
   [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to 
   create an ssh key pair and add the public key to your GitHub account. 
-  Do not add a passphrase to this key, as it will make things difficult 
-  for you in future labs.
+  Do not add a passphrase to this key, as it might make things difficult 
+  for some of the labs.
 - The "sping cloud services labs" projects can be cloned in the following 3 ways
     - [option #1] git clone ssh://git@bitbucketdc.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you set up your ssh key)
  	- [option #2] git clone https://\<sid\>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
