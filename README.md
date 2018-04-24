@@ -122,7 +122,7 @@ that occur when pushing an application? (Google "Diego architecture".)
 ### Spring Cloud Services 
 
 #### Setup for Bitbucket/GitHub
-- You will authenticate with GitHub using ssh keys. Follow 
+- You will authenticate with Bitbucket/GitHub using ssh keys. Follow 
   [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to 
   create an ssh key pair and add the public key to your GitHub account. 
   Do not add a passphrase to this key, as it might make things difficult 
