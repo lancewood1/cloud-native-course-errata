@@ -133,7 +133,8 @@ that occur when pushing an application? (Google "Diego architecture".)
  	- [option #3] git clone https://github.com/eitansuez/spring-cloud-services-labs
 
 #### Setup your Config Server
-- If you have not set up ssh key (or somehow it is not working), use local "app-config" directory
+- If you have not set up ssh key (or somehow it is not working), 
+  use local "app-config" directory as your repository as a temporary means
 ```yml
    server:
      port: 8888
