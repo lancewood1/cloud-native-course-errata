@@ -127,8 +127,8 @@ that occur when pushing an application? (Google "Diego architecture".)
   create an ssh key pair and add the public key to your GitHub account. 
   Do not add a passphrase to this key, as it will make things difficult 
   for you in future labs.
-- The "sping cloud services labs" projects can be obtained from 
-[here](https://github.com/eitansuez/spring-cloud-services-labs) as well
+- The "sping cloud services labs" projects can be cloned from 
+  [here](https://github.com/eitansuez/spring-cloud-services-labs) as well
 
 #### Config Server
 - What happens to your application by default if config server is down during its startup?
