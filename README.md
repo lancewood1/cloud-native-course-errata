@@ -151,7 +151,7 @@ that occur when pushing an application? (Google "Diego architecture".)
 ```
 - Please note that the quote server mentioned in the JPMC document is not working
 ```yml
-quoteServiceURL: http://quote-service-dev.apps.dev.na-1.gaia.jpmchase.net/quote
+   quoteServiceURL: http://quote-service-dev.apps.dev.na-1.gaia.jpmchase.net/quote
 
 ```
 
