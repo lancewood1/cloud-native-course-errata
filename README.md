@@ -132,7 +132,22 @@ that occur when pushing an application? (Google "Diego architecture".)
  	- [option #2] git clone https://\<sid\>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
  	- [option #3] git clone https://github.com/eitansuez/spring-cloud-services-labs
 
-#### Config Server
+#### Setup your Config Server
+- If you have not set up ssh key (or somehow it is not working), use local "app-config" directory
+```yml
+   server:
+     port: 8888
+
+   spring:
+     cloud:
+       config:
+         server:
+           git:
+             uri: file:///C:\tmp\app-config
+
+```
+
+#### Confg server
 - What happens to your application by default if config server is down during its startup?
 - What happens to your application by default if config server is down during actuator refresh?
 - Configure your application to fail-fast if config server is not available during start up.
