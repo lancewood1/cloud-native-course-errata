@@ -113,11 +113,11 @@ that occur when pushing an application? (Google "Diego architecture".)
 - Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
 - Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
 - Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory 
-  is less than 0.9, return `DOWN` status. Otherwise, return `UP` status.
+  is less than 0.9, return `DOWN` status. Otherwise, return `UP` status. 
+  (The solution project is available from https://github.com/sashinpivotal/helloworld1)
 - Is adding "instrumentation" code such as counting 
   "number of times a call is made" as described in the lab document
-  a good practice?  Is there an alternative? (The solution project is 
-  available from https://github.com/sashinpivotal/helloworld1)
+  a good practice?  Is there an alternative? 
 
 ### Spring Cloud Services 
 
