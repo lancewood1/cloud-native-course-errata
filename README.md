@@ -128,7 +128,7 @@ that occur when pushing an application? (Google "Diego architecture".)
   Do not add a passphrase to this key, as it will make things difficult 
   for you in future labs.
 - The "sping cloud services labs" projects can be cloned in the following 3 ways
-    - [option #1] git clone ssh://git@bitbucketdc.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
+    - [option #1] git clone ssh://git@bitbucketdc.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you set up your ssh key)
  	- [option #2] git clone https://<sid>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
  	- [option #3] git clone https://github.com/eitansuez/spring-cloud-services-labs
 
