@@ -149,7 +149,7 @@ that occur when pushing an application? (Google "Diego architecture".)
              uri: file:///C:\tmp\app-config
 
 ```
-- Please note that the quote server mentioned in the JPMC document is not working
+- Please note that the quote server mentioned in the lab document is not working
 ```yml
    quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
 
@@ -185,14 +185,12 @@ that occur when pushing an application? (Google "Diego architecture".)
 
 - General
   - The URL of the "console" (App manager) should start with "console..." but 
-    JPMC document (or email) says "login..."
+    lab document (or email) says "login..."
   
 - Blue Green deployment lab
   - Internet Exploder breaks on Blue Green - use Chrome
-  - JPMC document uses the term "subdomain", which is actually "hostname"
+  - lab document uses the term "subdomain", which is actually "hostname"
 
-- Config server lab
-  - Quote server is not available
 
 ## List of References
 
