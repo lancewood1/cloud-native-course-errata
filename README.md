@@ -133,6 +133,8 @@ that occur when pushing an application? (Google "Diego architecture".)
  	- [option #3] git clone https://github.com/eitansuez/spring-cloud-services-labs
 
 #### Setup your Config Server
+- Make sure "app-config" and "spring-cloud-services-labs" directories are two
+ separate directories: in other words, do not make one to be under the other
 - If you have not set up ssh key (or somehow it is not working), 
   use local "app-config" directory as your repository as a temporary means
 ```yml
@@ -145,6 +147,11 @@ that occur when pushing an application? (Google "Diego architecture".)
          server:
            git:
              uri: file:///C:\tmp\app-config
+
+```
+- Please note that the quote server mentioned in the JPMC document is not working
+```yml
+quoteServiceURL: http://quote-service-dev.apps.dev.na-1.gaia.jpmchase.net/quote
 
 ```
 
