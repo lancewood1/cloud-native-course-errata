@@ -119,7 +119,7 @@ that occur when pushing an application? (Google "Diego architecture".)
   a good practice?  Is there an alternative? (The solution project is 
   available from https://github.com/sashinpivotal/helloworld1)
 
-### Spring Cloud
+### Spring Cloud Services 
 
 #### Setup
 - You will authenticate with GitHub using ssh keys. Follow 
