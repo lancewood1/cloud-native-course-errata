@@ -122,13 +122,15 @@ that occur when pushing an application? (Google "Diego architecture".)
 ### Spring Cloud
 
 #### Setup
-- We will authenticate with GitHub using ssh keys. Follow 
+- You will authenticate with GitHub using ssh keys. Follow 
   [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to 
   create an ssh key pair and add the public key to your GitHub account. 
   Do not add a passphrase to this key, as it will make things difficult 
   for you in future labs.
-- The "sping cloud services labs" projects can be cloned from 
-  [here](https://github.com/eitansuez/spring-cloud-services-labs) as well
+- The "sping cloud services labs" projects can be cloned in the following 3 ways
+    - [option #1] git clone ssh://git@bitbucketdc.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
+ 	- [option #2] git clone https://<sid>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
+ 	- [option #3] git clone https://github.com/eitansuez/spring-cloud-services-labs
 
 #### Config Server
 - What happens to your application by default if config server is down during its startup?
