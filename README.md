@@ -130,7 +130,7 @@ that occur when pushing an application? (Google "Diego architecture".)
 - The "sping cloud services labs" projects can be cloned in the following 3 ways
     - [option #1] git clone ssh://git@bitbucketdc.\<company\>.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you set up your ssh key)
  	- [option #2] git clone https://\<sid\>@bitbucketdc.\<company\>.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
- 	- [option #3] git clone https://github.com/eitansuez/spring-cloud-services-labs
+ 	- [option #3] git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs
 
 #### Setup your Config Server
 - Make sure "app-config" and "spring-cloud-services-labs" directories are two
@@ -153,6 +153,11 @@ that occur when pushing an application? (Google "Diego architecture".)
 ```yml
    quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
 
+```
+- You may build and deploy your own from here:
+
+```yml
+https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/quote-server
 ```
 
 #### Confg server
