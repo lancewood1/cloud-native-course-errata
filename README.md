@@ -7,10 +7,13 @@
 - How many containers are needed for pushing an app?
 - Why do you see "container gets created and destroyed" as part of pushing app?
 - Can you find diagram that shows the sequence of internal operations 
-that occur when pushing an application?
+that occur when pushing an application? (Google "Diego architecture".)
 - What is the "org"/"space" structure in your PCF installation?
-- Why do you have to use "--random-route"? What is the option that lets you
-  specify the hostname part of a route?
+- Why do you have to use "--random-route"? What is the "cf push" option 
+  that lets you specify the hostname part of a route? ("cf push -h")
+- Suppose you deployed an application with "cf push <app-name> -m 768M",
+  what would be memory allocated when you redepployed the same application
+  with "cf push <app-name>"?
 
 ### Logging
 - Where should your application write logs? Is it a good practice 
