@@ -31,6 +31,8 @@ that occur when pushing an application? (Google "PCF how applications are staged
   instances?
 - How do you recover failing application instances today?
 - What effect does this have on your application design? 
+- Is there "auto-scaling" service that automatically scales up
+  or scale down depending on CPU utilization, latency, etc?
 
 ### HA
 - How could you determine if your application has been crashing?
@@ -46,8 +48,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - From an application perspective, are managed services 
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
-- Is there "auto-scaling" service that automatically scales up
-  or scale down depending on CPU utilization, latency, etc?
+
 
 ### Buildpacks
 
