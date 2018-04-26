@@ -3,7 +3,7 @@
 ## Challenges
 
 ### Push to the Cloud
-- Why, everytime you push an app, do the list of buildpacks are downloaded again?
+- Why, everytime you push an app, are the list of buildpacks downloaded again?
 - How many containers are needed for pushing an app?
 - Why do you see "container gets created and destroyed" as part of pushing app?
 - Can you find diagram that shows the sequence of internal operations 
@@ -12,7 +12,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Why do you have to use "--random-route"? What is the "cf push" option 
   that lets you specify the hostname part of a route? ("cf push -h")
 - Suppose you deployed an application with "cf push <app-name> -m 768M",
-  what would be memory allocated when you redepployed the same application
+  what would be memory allocated when you re-deployed the same application
   with "cf push <app-name>"?
 
 ### Logging
@@ -130,7 +130,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - The "sping cloud services labs" projects can be cloned in the following 3 ways
     - [option #1] git clone ssh://git@bitbucketdc.\<company\>.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you set up your ssh key)
  	- [option #2] git clone https://\<sid\>@bitbucketdc.\<company\>.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
- 	- [option #3] git clone https://github.com/eitansuez/spring-cloud-services-labs
+ 	- [option #3] git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs
 
 #### Setup your Config Server
 - Make sure "app-config" and "spring-cloud-services-labs" directories are two
@@ -153,6 +153,11 @@ that occur when pushing an application? (Google "PCF how applications are staged
 ```yml
    quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
 
+```
+- You may build and deploy your own from here:
+
+```yml
+https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/quote-server
 ```
 
 #### Confg server
