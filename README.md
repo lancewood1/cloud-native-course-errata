@@ -12,7 +12,7 @@ that occur when pushing an application? (Google "Diego architecture".)
 - Why do you have to use "--random-route"? What is the "cf push" option 
   that lets you specify the hostname part of a route? ("cf push -h")
 - Suppose you deployed an application with "cf push <app-name> -m 768M",
-  what would be memory allocated when you redepployed the same application
+  what would be memory allocated when you re-deployed the same application
   with "cf push <app-name>"?
 
 ### Logging
