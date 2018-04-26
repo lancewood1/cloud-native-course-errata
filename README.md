@@ -77,6 +77,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
   if you are creating a Spring Boot app from "start.spring.io".
   If you are creating an Spring Boot app from internal "go/moneta",
   it is already using "Spring Boot 1.5.x"
+- Make sure you are using Java 8
 - If you experience Maven build problem, make sure you set the
   correct Maven proxy in your /<Home-directory>/.m2/settings.xml file
 - If you experience 404 error when accessing your controller,
