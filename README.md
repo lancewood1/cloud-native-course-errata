@@ -86,8 +86,8 @@ that occur when pushing an application? (Google "PCF how applications are staged
   and use it as a string that gets returned (instead of "hello world")
 - Use different port (instead of default port of 8080) 
   by setting "server.port" property
-- Use customer banner: create one from patorjk.com 
- (google "spring boot banner patorjk")
+- Use customer banner: create one from patorjk.com by creating "banner.txt"
+  under /src/main/resources directory (google "spring boot banner patorjk")
 - Create spring profile: "dev" and "production" from which different
   message value can be extracted
 - Create external property file(s) as opposed to the property files
