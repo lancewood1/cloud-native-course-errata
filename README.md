@@ -3,7 +3,7 @@
 ## Challenges
 
 ### Push to the Cloud
-- Why, everytime you push an app, do the list of buildpacks are downloaded again?
+- Why, everytime you push an app, are the list of buildpacks downloaded again?
 - How many containers are needed for pushing an app?
 - Why do you see "container gets created and destroyed" as part of pushing app?
 - Can you find diagram that shows the sequence of internal operations 
