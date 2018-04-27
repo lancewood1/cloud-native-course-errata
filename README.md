@@ -213,12 +213,15 @@ and Cloud Native Developer courses:
 - Git Intro: https://app.pluralsight.com/library/courses/how-git-works/table-of-contents
 - Git Advanced: https://app.pluralsight.com/library/courses/mastering-git/table-of-contents
 	
-#### Development & Design
+#### Development, Design, and Cloud Native Migration Strategies
 - This site covers strategy of evolving applications from MVP (Minimum Viable Product, unstructured apps, through modularized monoliths, to distributed systems: http://www.appcontinuum.io/
 - A great Spring One 2017 Talk about practical use of SOLID principles: https://springoneplatform.io/sessions/solid-in-the-wild-life-when-your-software-is-actually-soft
 - Original 12 Factors: https://12factor.net
 - "Beyond 12 Factors" (Pivotal evolution of original 12 Factors): https://content.pivotal.io/blog/beyond-the-twelve-factor-app
-## Spring Boot Plugins (building and packaging Springboot Apps):
+- "Breaking the Monolith": https://content.pivotal.io/slides/breaking-the-monolith
+- "Application Strangulation": https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
+
+#### Spring Boot Plugins (building and packaging Springboot Apps):
 - Gradle Springboot Plugin: https://docs.spring.io/spring-boot/docs/2.0.1.BUILD-SNAPSHOT/gradle-plugin/reference/html/
 - Maven Springboot Plugin: https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#build-tool-plugins-maven-plugin
 - Enterprise Application Patterns: https://martinfowler.com/eaaCatalog/index.html
