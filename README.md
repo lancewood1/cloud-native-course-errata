@@ -153,15 +153,12 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 ```
 - Please note that the quote server mentioned in the lab document is not working
-```yml
-   quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
 
-```
-- You may build and deploy your own from here:
+	```yml
+	quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
+	```
 
-```yml
-https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/quote-server
-```
+- You may build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/quote-server)
 
 #### Confg server
 - What happens to your application by default if config server is down during its startup?
