@@ -117,6 +117,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory 
   is less than 0.9, return `DOWN` status. Otherwise, return `UP` status. 
   (The solution project is available from https://github.com/sashinpivotal/helloworld1)
+- How to use Actuator health checks in Cloud Foundry to discard unhealthy AI's?
 - Is adding "instrumentation" code such as counting 
   "number of times a call is made" as described in the lab document
   a good practice?  Is there an alternative? 
@@ -167,6 +168,7 @@ https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/quote-serv
 - What happens to your application by default if config server is down during actuator refresh?
 - Configure your application to fail-fast if config server is not available during start up.
 - Configure your application to use a retry/backoff policy on a config server fail-fast.
+- How might you handle configuration changes of database passwords with zero downtime?
 
 #### Client Load Balancing
 
