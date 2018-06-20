@@ -249,6 +249,10 @@ and Cloud Native Developer courses:
 - How to push config via git webhook: https://spencergibb.netlify.com/blog/2015/09/24/spring-cloud-config-push-notifications/
 - Feature Toggles: https://martinfowler.com/articles/feature-toggles.html
 
+#### Spring Cloud Bus
+- Home: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html
+- Targeting application for config bus refresh: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html#_addressing_all_instances_of_a_service
+
 #### Spring Cloud Commons - Useful for seeing what's under the hood
 - Project Home: https://cloud.spring.io/spring-cloud-commons/
 - Projection Documention: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html
