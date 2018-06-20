@@ -158,9 +158,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
 	quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
 	```
 
-- You may build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/quote-server)
+- You may build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)
 
-#### Confg server
+#### Config server
 - What happens to your application by default if config server is down during its startup?
 - What happens to your application by default if config server is down during actuator refresh?
 - Configure your application to fail-fast if config server is not available during start up.
