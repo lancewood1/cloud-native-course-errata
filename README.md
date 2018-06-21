@@ -3,6 +3,7 @@
 ## Challenges
 
 ### Push to the Cloud
+
 - Why, everytime you push an app, are the list of buildpacks downloaded again?
 - How many containers are needed for pushing an app?
 - Why do you see "container gets created and destroyed" as part of pushing app?
@@ -16,6 +17,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
   with "cf push <app-name>"?
 
 ### Logging
+
 - Where should your application write logs? Is it a good practice 
   write logs to a file?
 - What are some of the different origin codes seen in the log? 
@@ -24,6 +26,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - How does this change how you access logs today? At scale? 
 
 ### Scaling
+
 - What is the preferred, "scaling out" or "scaling up"?  Why?
 - What the origin code(s) that show "number of instances increase/decreased"?
 - When inceasing number of instances, do existing instances get restarted? 
@@ -35,10 +38,12 @@ that occur when pushing an application? (Google "PCF how applications are staged
   or scale down depending on CPU utilization, latency, etc?
 
 ### HA
+
 - How could you determine if your application has been crashing?
 - What are 4 HA features in PCF?
 
 ### Services
+
 - What does "create service" do? What about "bind service"?
 - What is the difference between "restart" and "restaging"? What
   could be use cases you will have to do "restaging"?
@@ -49,7 +54,6 @@ that occur when pushing an application? (Google "PCF how applications are staged
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
 
-
 ### Buildpacks
 
 - What are the buildpack scripts that get executed when creating a droplet?
@@ -59,6 +63,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
   as opposed to using docker image?
 
 ### Blue-Green deployment
+
 - Can an application have multiple routes?
 - Can a route be applied to multiple applications?
 - Can a route exist without an application associated with it?
@@ -70,7 +75,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 
 ### Spring Boot
+
 #### Spring vs. Spring Boot
+
 - Skip the first part of the lab (creating Spring MVC app). 
   Just do the second part of the lab (creating Spring Boot app).
 - Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
@@ -100,9 +107,11 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - What are the 4 major features Spring Boot provide?
 
 #### Spring Boot Internals
+
 - Which auto-configuration is used for auto-configuring data source object?
 
 #### Data Access Lab
+
 - Name some of the Enterprise Application Patterns implemented by the Snippet Manager.
 - Why are there different Snippet objects (i.e. SnippetRecord vs. SnippetInfo)?
 - How might you reuse or refactor the solution to support either synchronous over HTTP, or an asynchronous solution adding or updating Snippets through AMQP or Kafka?
@@ -111,6 +120,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 	- How might you refactor the solution to account for hosting active or inactive Snippets, and filtering only active records?
 
 #### Actuator
+
 - Skip the "Challenge" part of the lab in the document
 - Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
 - Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
@@ -125,6 +135,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 ### Spring Cloud Services 
 
 #### Setup for Bitbucket/GitHub
+
 - You will authenticate with Bitbucket/GitHub using ssh keys. Follow 
   [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to 
   create an ssh key pair and add the public key to your GitHub account. 
@@ -136,6 +147,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
  	- [option #3] git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs
 
 #### Setup your Config Server
+
 - Make sure "app-config" and "spring-cloud-services-labs" directories are two
  separate directories: in other words, do not make one to be under the other
 - If you have not set up ssh key (or somehow it is not working), 
@@ -161,6 +173,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - You may build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)
 
 #### Config server
+
 - What happens to your application by default if config server is down during its startup?
 - What happens to your application by default if config server is down during actuator refresh?
 - Configure your application to fail-fast if config server is not available during start up.
@@ -170,6 +183,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 #### Client Load Balancing
 
 #### Hystrix
+
 - Distinguish between Transient and Persistent Resource failure.
 - Does Hystrix help protect against either/or/both Transient and Persistent failures? How?
 - Classify the use of the following downstream integration APIs in your Hystrix protected methods as either "Trusted" or "Untrusted", and explain why:
@@ -184,6 +198,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 ## FAQ
 
 ## Known Issues
+
 - Push to the Cloud
   - "python" app does not have correct dependency - you have to add the
     "flask" to the "requirements.txt"
@@ -201,18 +216,34 @@ that occur when pushing an application? (Google "PCF how applications are staged
 ## List of References
 
 ### Spring Cloud - Cloud Native References
+
 Following are some suggested references - books, courses, blogs, articles and videos to give a deeper dive into Spring Cloud 
 and Cloud Native Developer courses:
 
 #### Some good overview Pluralsight courses
+
 - Cloud Foundry for Developers: https://app.pluralsight.com/library/courses/cloud-foundry-developers/table-of-contents
 - Pivotal Cloud Foundry for Developers: https://app.pluralsight.com/library/courses/cloud-foundry-developer-1dot7-pivotal/table-of-contents
 - Java Microservices with Spring Cloud: Coordinating Services: https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-coordinating-services/table-of-contents
 - Java Microservices with Spring Cloud: Developing Services: https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-developing-services/table-of-contents
 - Git Intro: https://app.pluralsight.com/library/courses/how-git-works/table-of-contents
 - Git Advanced: https://app.pluralsight.com/library/courses/mastering-git/table-of-contents
-	
+
+#### App Performance Test Tools
+
+Following are useful open tools in order of simplicity vs. flexibility (last two are preferred when modeling a 
+workload profile for more complex tests
+
+- Siege: https://github.com/JoeDog/siege
+- Apache Benchmark (AB)
+	- https://httpd.apache.org/docs/2.4/programs/ab.html
+	- https://www.tutorialspoint.com/apache_bench/index.htm
+	- https://qafoo.com/blog/109_why_apache_benchmark_is_not_enough.html
+- Apache Jmeter: https://jmeter.apache.org/
+- Blazemeter: https://www.blazemeter.com/
+
 #### Development, Design, and Cloud Native Migration Strategies
+
 - This site covers strategy of evolving applications from MVP (Minimum Viable Product, unstructured apps, through modularized monoliths, to distributed systems: http://www.appcontinuum.io/
 - A great Spring One 2017 Talk about practical use of SOLID principles: https://springoneplatform.io/sessions/solid-in-the-wild-life-when-your-software-is-actually-soft
 - Original 12 Factors: https://12factor.net
@@ -227,22 +258,27 @@ and Cloud Native Developer courses:
 - Enterprise Integration Patterns: http://www.enterpriseintegrationpatterns.com/
 
 #### Spring Cloud on .NET
+
 - Steeltoe (Spring Cloud Config Server and Spring Cloud Netflix on .NET): https://steeltoe.io/
 
 #### Netflix OSS Docs
+
 - Ribbon Wiki: https://github.com/Netflix/Ribbon/wiki
 - Hystrix Wiki: https://github.com/Netflix/Hystrix/wiki
 - Hystrix Algorithm: https://github.com/Netflix/Hystrix/wiki/How-it-Works
 - Hystrix Metrics and Monitoring: https://github.com/Netflix/Hystrix/wiki/Metrics-and-Monitoring
 - Performance Implications of using Hystrix: https://github.com/Netflix/Hystrix/wiki/FAQ%20:%20General#what-is-the-processing-overhead-of-using-hystrix
+- Hystrix Operations and Tuning Guide: https://github.com/Netflix/Hystrix/wiki/Operations
 - Eureka Wiki: https://github.com/Netflix/Eureka/wiki
 - Nebula build plugins: https://nebula-plugins.github.io/
 
 #### Spring Cloud Netflix - Eureka, Ribbon, Hystrix
+
 - Project Home: https://cloud.spring.io/spring-cloud-netflix/
 - Product Documentation: http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.4.3.RELEASE/single/spring-cloud-netflix.html
 
 #### Spring Cloud Config
+
 - Project Home: https://cloud.spring.io/spring-cloud-config/
 - Project Documentation: http://cloud.spring.io/spring-cloud-static/spring-cloud-config/1.4.2.RELEASE/single/spring-cloud-config.html
 - Spring External Configuration Orders of Precedence: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
@@ -250,10 +286,12 @@ and Cloud Native Developer courses:
 - Feature Toggles: https://martinfowler.com/articles/feature-toggles.html
 
 #### Spring Cloud Bus
+
 - Home: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html
 - Targeting application for config bus refresh: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html#_addressing_all_instances_of_a_service
 
 #### Spring Cloud Commons - Useful for seeing what's under the hood
+
 - Project Home: https://cloud.spring.io/spring-cloud-commons/
 - Projection Documention: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html
 - Ribbon Retry Policy: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#_retrying_failed_requests
@@ -262,6 +300,7 @@ and Cloud Native Developer courses:
 - Abstracting different Spring Cloud Service Registries: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#__enablediscoveryclient
 
 #### Pivotal Cloud Foundry - Spring Cloud Services
+
 - Home: http://docs.pivotal.io/spring-cloud-services/1-4/common/index.html
 - Dependencies Matrix: http://docs.pivotal.io/spring-cloud-services/1-4/common/client-dependencies.html
 - Configuring Cross Cloud Foundry Service Registy (route mode): http://docs.pivotal.io/spring-cloud-services/1-4/common/service-registry/enabling-peer-replication.html
@@ -269,19 +308,23 @@ and Cloud Native Developer courses:
 - Configuring PCF Container-to-Container Networking, Service Registry and Client Load Balancing (SpringOne 2017): https://www.youtube.com/watch?v=1WJhFhBr-0Q
 
 #### Pivotal Cloud Foundry - Security
+
 - PCF Security: https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa
 
 #### Migrations & Monoliths
+
 - "Online migration at scale blog": https://stripe.com/blog/online-migrations
 - "Low risk monolith to micro services" Christian Posta: http://blog.christianposta.com/microservices/low-risk-monolith-to-microservice-evolution/
 - "MonolithFirst" by Martin Fowler: https://martinfowler.com/bliki/MonolithFirst.html
 
 #### Blogs
+
 - General blog of Cloud Native, Spring Cloud subjects from a Spring Cloud thought leader: https://spencergibb.netlify.com/
 - Dipping into spring cloud topics from a Spring Cloud contributor: http://ryanjbaxter.com/
 - The Spring Cloud blog: https://spring.io/blog
 
 #### Spring Cloud Dataflow documentation (handling streaming and data centric applications using cloud native patterns and tooling)
+
 - Project Home: https://cloud.spring.io/spring-cloud-dataflow/
 - Project Reference: https://docs.spring.io/spring-cloud-dataflow-samples/docs/current/reference/htmlsingle/
 - Task Batch: https://docs.spring.io/spring-cloud-dataflow-samples/docs/current/reference/htmlsingle/#_task_batch
@@ -290,7 +333,7 @@ and Cloud Native Developer courses:
 - Project Reference for Dataflow on PCF: https://docs.spring.io/spring-cloud-dataflow-server-cloudfoundry/docs/current-SNAPSHOT/reference/htmlsingle/
 
 #### Books
+
 - Release It! 2nd Edition: https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software-ebook/dp/B079YWMY2V/ref=mt_kindle?_encoding=UTF8&me=&dpID=419zAwJJH4L&preST=_SX342_QL70_&dpSrc=detail
 - Continuous Integration: https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley-ebook/dp/B003YMNVC0/ref=mt_kindle?_encoding=UTF8&me=&dpID=51yF2SYUi7L&preST=_SY445_QL70_&dpSrc=detail
 - Building Evolutionary Architectures: https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant-ebook/dp/B075RR1XVG/ref=mt_kindle?_encoding=UTF8&me=&dpID=61kAEC%252BouJL&preST=_SY445_QL70_&dpSrc=detail
-
