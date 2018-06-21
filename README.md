@@ -194,6 +194,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Which Hystrix isolation strategy is more appropriate for Trusted clients?  Which is more appropriate for Untrusted clients?
 - Configure Hystrix in your application to use Semaphore isolation strategy, restart your applications and hystrix dashboard, and execute some requests.  Do you see thread pools in your dashboard?  Why or why not?
 - Should you use Hystrix to protect against transactionally sensitive operations?  Why or why not?
+- For a demo of Hystrix fault tolerance characteristics, see here: https://github.com/pivotal-bill-kable/spring-cloud-netflix-oss-ft-demos
 
 ## FAQ
 
