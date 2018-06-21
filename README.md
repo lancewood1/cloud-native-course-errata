@@ -215,6 +215,11 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 ## List of References
 
+### Pivotal Cloud Foundry References
+
+- Cloud Foundry Services: https://docs.cloudfoundry.org/services/overview.html
+- Healthchecks: https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html
+
 ### Spring Cloud - Cloud Native References
 
 Following are some suggested references - books, courses, blogs, articles and videos to give a deeper dive into Spring Cloud 
@@ -249,7 +254,12 @@ workload profile for more complex tests
 - Original 12 Factors: https://12factor.net
 - "Beyond 12 Factors" (Pivotal evolution of original 12 Factors): https://content.pivotal.io/blog/beyond-the-twelve-factor-app
 - "Breaking the Monolith": https://content.pivotal.io/slides/breaking-the-monolith
+- "Monolith First": https://martinfowler.com/bliki/MonolithFirst.html
+- "Microservices Prerequisites": https://martinfowler.com/bliki/MicroservicePrerequisites.html
+- "Low risk monolith to micro services" Christian Posta: http://blog.christianposta.com/microservices/low-risk-monolith-to-microservice-evolution/
 - "Application Strangulation": https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
+- "Online migration at scale blog": https://stripe.com/blog/online-migrations
+
 
 #### Spring Boot Plugins (building and packaging Springboot Apps):
 - Gradle Springboot Plugin: https://docs.spring.io/spring-boot/docs/2.0.1.BUILD-SNAPSHOT/gradle-plugin/reference/html/
@@ -310,12 +320,6 @@ workload profile for more complex tests
 #### Pivotal Cloud Foundry - Security
 
 - PCF Security: https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa
-
-#### Migrations & Monoliths
-
-- "Online migration at scale blog": https://stripe.com/blog/online-migrations
-- "Low risk monolith to micro services" Christian Posta: http://blog.christianposta.com/microservices/low-risk-monolith-to-microservice-evolution/
-- "MonolithFirst" by Martin Fowler: https://martinfowler.com/bliki/MonolithFirst.html
 
 #### Blogs
 
