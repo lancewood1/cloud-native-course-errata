@@ -238,8 +238,7 @@ and Cloud Native Developer courses:
 
 #### App Performance Test Tools
 
-Following are useful open tools in order of simplicity vs. flexibility (last two are preferred when modeling a 
-workload profile for more complex tests
+Following are useful open tools in order of simplicity vs. flexibility
 
 - Siege: https://github.com/JoeDog/siege
 - Apache Benchmark (AB)
@@ -248,6 +247,7 @@ workload profile for more complex tests
 	- https://qafoo.com/blog/109_why_apache_benchmark_is_not_enough.html
 - Apache Jmeter: https://jmeter.apache.org/
 - Blazemeter: https://www.blazemeter.com/
+- Gatling: https://gatling.io/
 
 #### Development, Design, and Cloud Native Migration Strategies
 
