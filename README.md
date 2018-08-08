@@ -72,7 +72,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
   (See if there is "cf" command for this.)
 - Is a route unique per PCF installation, per org, or per space?
 - What are the constraints of Blue-Green deployment?
-
+- What types of versions is the PCF Blue-Green deployment good for?  See about [Semantic Versioning=](https://semver.org/)
 
 ### Spring Boot
 
