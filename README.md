@@ -7,10 +7,10 @@
 - Why, everytime you push an app, are the list of buildpacks downloaded again?
 - How many containers are needed for pushing an app?
 - Why do you see "container gets created and destroyed" as part of pushing app?
-- Can you find diagram that shows the sequence of internal operations 
+- Can you find diagram that shows the sequence of internal operations
 that occur when pushing an application? (Google "PCF how applications are staged".)
 - What is the "org"/"space" structure in your PCF installation?
-- Why do you have to use "--random-route"? What is the "cf push" option 
+- Why do you have to use "--random-route"? What is the "cf push" option
   that lets you specify the hostname part of a route? ("cf push -h")
 - Suppose you deployed an application with "cf push <app-name> -m 768M",
   what would be memory allocated when you re-deployed the same application
@@ -18,22 +18,22 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 ### Logging
 
-- Where should your application write logs? Is it a good practice 
+- Where should your application write logs? Is it a good practice
   write logs to a file?
-- What are some of the different origin codes seen in the log? 
+- What are some of the different origin codes seen in the log?
   (Google "PCF log types"!)
 - Can you find "PCF architecture diagram"? (Google it!)
-- How does this change how you access logs today? At scale? 
+- How does this change how you access logs today? At scale?
 
 ### Scaling
 
 - What is the preferred, "scaling out" or "scaling up"?  Why?
 - What the origin code(s) that show "number of instances increase/decreased"?
-- When inceasing number of instances, do existing instances get restarted? 
+- When inceasing number of instances, do existing instances get restarted?
   How do you find that out? What about the case of decreasing number of
   instances?
 - How do you recover failing application instances today?
-- What effect does this have on your application design? 
+- What effect does this have on your application design?
 - Is there "auto-scaling" service that automatically scales up
   or scale down depending on CPU utilization, latency, etc?
 
@@ -48,9 +48,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - What is the difference between "restart" and "restaging"? What
   could be use cases you will have to do "restaging"?
 - What is the difference between "managed service" (service found
-  in the "cf marketplace") and "non-managed service" ("user provided service")? 
+  in the "cf marketplace") and "non-managed service" ("user provided service")?
 - What are the 3 use cases of "user provided service"? ("cf cups -h")
-- From an application perspective, are managed services 
+- From an application perspective, are managed services
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
 
@@ -68,7 +68,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Can a route be applied to multiple applications?
 - Can a route exist without an application associated with it?
   (See "cf routes" and "cf create-route" commands.)
-- How can I delete all orphaned routes? 
+- How can I delete all orphaned routes?
   (See if there is "cf" command for this.)
 - Is a route unique per PCF installation, per org, or per space?
 - What are the constraints of Blue-Green deployment?
@@ -78,7 +78,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 #### Spring vs. Spring Boot
 
-- Skip the first part of the lab (creating Spring MVC app). 
+- Skip the first part of the lab (creating Spring MVC app).
   Just do the second part of the lab (creating Spring Boot app).
 - Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
   if you are creating a Spring Boot app from "start.spring.io".
@@ -91,7 +91,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
   think about the rules of component scanning
 - Add "message" property to application.yml (or application.properties)
   and use it as a string that gets returned (instead of "hello world")
-- Use different port (instead of default port of 8080) 
+- Use different port (instead of default port of 8080)
   by setting "server.port" property
 - Use customer banner: create one from patorjk.com by creating "banner.txt"
   under /src/main/resources directory (google "spring boot banner patorjk")
@@ -100,7 +100,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Create external property file(s) as opposed to the property files
   inside the jar file
 - Deploy the application to the cloud and run with dev profile
-- Create manifest file using "create-app-manifest" 
+- Create manifest file using "create-app-manifest"
 - Deploy the app using the newly created manifest file
 - What are three ways to config Spring bean? What are the use cases
   for each scheme?
@@ -115,7 +115,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Name some of the Enterprise Application Patterns implemented by the Snippet Manager.
 - Why are there different Snippet objects (i.e. SnippetRecord vs. SnippetInfo)?
 - How might you reuse or refactor the solution to support either synchronous over HTTP, or an asynchronous solution adding or updating Snippets through AMQP or Kafka?
-- Review the `SnippetController.snippets` GET method.  
+- Review the `SnippetController.snippets` GET method.
 	- What is the Java programming style/API used?
 	- How might you refactor the solution to account for hosting active or inactive Snippets, and filtering only active records?
 
@@ -124,22 +124,22 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Skip the "Challenge" part of the lab in the document
 - Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
 - Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
-- Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory 
-  is less than 0.9, return `DOWN` status. Otherwise, return `UP` status. 
+- Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory
+  is less than 0.9, return `DOWN` status. Otherwise, return `UP` status.
   (The solution project is available from https://github.com/sashinpivotal/helloworld1)
 - How to use Actuator health checks in Cloud Foundry to discard unhealthy AI's?
-- Is adding "instrumentation" code such as counting 
+- Is adding "instrumentation" code such as counting
   "number of times a call is made" as described in the lab document
-  a good practice?  Is there an alternative? 
+  a good practice?  Is there an alternative?
 
-### Spring Cloud Services 
+### Spring Cloud Services
 
 #### Setup for Bitbucket/GitHub
 
-- You will authenticate with Bitbucket/GitHub using ssh keys. Follow 
-  [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to 
-  create an ssh key pair and add the public key to your GitHub account. 
-  Do not add a passphrase to this key when you are creating ssh key, 
+- You will authenticate with Bitbucket/GitHub using ssh keys. Follow
+  [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to
+  create an ssh key pair and add the public key to your GitHub account.
+  Do not add a passphrase to this key when you are creating ssh key,
   as it might make things difficult for some of the labs.
 - The "sping cloud services labs" projects can be cloned in the following 3 ways
     - [option #1] git clone ssh://git@bitbucketdc.\<company\>.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you set up your ssh key)
@@ -150,7 +150,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 - Make sure "app-config" and "spring-cloud-services-labs" directories are two
  separate directories: in other words, do not make one to be under the other
-- If you have not set up ssh key (or somehow it is not working), 
+- If you have not set up ssh key (or somehow it is not working),
   use local "app-config" directory as your repository as a temporary means
 ```yml
    server:
@@ -206,9 +206,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
   - "ruby" application needs to change the Ruby version in the Gemfile
 
 - General
-  - The URL of the "console" (App manager) should start with "console..." but 
+  - The URL of the "console" (App manager) should start with "console..." but
     lab document (or email) says "login..."
-  
+
 - Blue Green deployment lab
   - Internet Exploder breaks on Blue Green - use Chrome
   - lab document uses the term "subdomain", which is actually "hostname"
@@ -224,7 +224,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 ### Spring Cloud - Cloud Native References
 
-Following are some suggested references - books, courses, blogs, articles and videos to give a deeper dive into Spring Cloud 
+Following are some suggested references - books, courses, blogs, articles and videos to give a deeper dive into Spring Cloud
 and Cloud Native Developer courses:
 
 #### Some good overview Pluralsight courses
@@ -337,6 +337,15 @@ Following are useful open tools in order of simplicity vs. flexibility
 - Using PCF Job Scheduler: http://docs.pivotal.io/pcf-scheduler/1-1/using.html
 - Project Home for Dataflow on PCF: https://cloud.spring.io/spring-cloud-dataflow-server-cloudfoundry/
 - Project Reference for Dataflow on PCF: https://docs.spring.io/spring-cloud-dataflow-server-cloudfoundry/docs/current-SNAPSHOT/reference/htmlsingle/
+
+#### Spring Cloud Supplement
+
+- Service Registry Pattern (./supplement/ServiceRegistryPattern.pdf)
+- Circuit Breaker Pattern (./supplement/CircuitBreakerPattern.pdf)
+- Service Discovery with Netflix Eureka (./supplement/ServiceDiscoverywithNetflixEureka.pdf)
+- Load Balancing Patterns (./supplement/LoadBalancingPatterns.pdf)
+- Fault Tolerance Patterns (./supplement/FaultTolerancePatterns.pdf)
+- Hystrix Isolation Strategy (./supplement/HystrixIsolationStrategy.pdf)
 
 #### Books
 
