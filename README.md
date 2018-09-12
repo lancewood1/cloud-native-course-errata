@@ -340,12 +340,12 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 #### Spring Cloud Supplement
 
-- Service Registry Pattern (./supplement/ServiceRegistryPattern.pdf)
-- Circuit Breaker Pattern (./supplement/CircuitBreakerPattern.pdf)
-- Service Discovery with Netflix Eureka (./supplement/ServiceDiscoverywithNetflixEureka.pdf)
-- Load Balancing Patterns (./supplement/LoadBalancingPatterns.pdf)
-- Fault Tolerance Patterns (./supplement/FaultTolerancePatterns.pdf)
-- Hystrix Isolation Strategy (./supplement/HystrixIsolationStrategy.pdf)
+- [Service Registry Pattern](./supplement/ServiceRegistryPattern.pdf)
+- [Circuit Breaker Pattern](./supplement/CircuitBreakerPattern.pdf)
+- [Service Discovery with Netflix Eureka](./supplement/ServiceDiscoverywithNetflixEureka.pdf)
+- [Load Balancing Patterns](./supplement/LoadBalancingPatterns.pdf)
+- [Fault Tolerance Patterns](./supplement/FaultTolerancePatterns.pdf)
+- [Hystrix Isolation Strategy](./supplement/HystrixIsolationStrategy.pdf)
 
 #### Books
 
