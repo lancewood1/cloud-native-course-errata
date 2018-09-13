@@ -348,6 +348,10 @@ Following are useful open tools in order of simplicity vs. flexibility
 - [Hystrix Load Shedding](./supplement/HystrixLoadShedding.pdf)
 - [Hystrix Isolation Strategy](./supplement/HystrixIsolationStrategy.pdf)
 
+#### Spring Cloud App Code
+
+- [Legacy lab code repo](https://github.com/pivotal-education/apps-spring-cloud-services-labs)
+
 #### Books
 
 - Release It! 2nd Edition: https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software-ebook/dp/B079YWMY2V/ref=mt_kindle?_encoding=UTF8&me=&dpID=419zAwJJH4L&preST=_SX342_QL70_&dpSrc=detail
