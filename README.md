@@ -520,11 +520,11 @@ Following are useful open tools in order of simplicity vs. flexibility
 - [Ribbon Wiki](https://github.com/Netflix/Ribbon/wiki)
 - [Hystrix Wiki](https://github.com/Netflix/Hystrix/wiki)
 - [Hystrix Algorithm](https://github.com/Netflix/Hystrix/wiki/How-it-Works)
-- Hystrix Metrics and Monitoring: https://github.com/Netflix/Hystrix/wiki/Metrics-and-Monitoring
-- Performance Implications of using Hystrix: https://github.com/Netflix/Hystrix/wiki/FAQ%20:%20General#what-is-the-processing-overhead-of-using-hystrix
-- Hystrix Operations and Tuning Guide: https://github.com/Netflix/Hystrix/wiki/Operations
-- Eureka Wiki: https://github.com/Netflix/Eureka/wiki
-- Nebula build plugins: https://nebula-plugins.github.io/
+- [Hystrix Metrics and Monitoring](https://github.com/Netflix/Hystrix/wiki/Metrics-and-Monitoring)
+- [Performance Implications of using Hystrix](https://github.com/Netflix/Hystrix/wiki/FAQ%20:%20General#what-is-the-processing-overhead-of-using-hystrix)
+- [Hystrix Operations and Tuning Guide](https://github.com/Netflix/Hystrix/wiki/Operations)
+- [Eureka Wiki](https://github.com/Netflix/Eureka/wiki)
+- [Nebula build plugins](https://nebula-plugins.github.io/)
 
 ### Spring Cloud Netflix - Eureka, Ribbon, Hystrix
 
@@ -533,11 +533,11 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 ### Spring Cloud Config
 
-- Project Home: https://cloud.spring.io/spring-cloud-config/
-- Project Documentation: http://cloud.spring.io/spring-cloud-static/spring-cloud-config/1.4.2.RELEASE/single/spring-cloud-config.html
-- Spring External Configuration Orders of Precedence: https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
-- How to push config via git webhook: https://spencergibb.netlify.com/blog/2015/09/24/spring-cloud-config-push-notifications/
-- Feature Toggles: https://martinfowler.com/articles/feature-toggles.html
+- [Project Home](https://cloud.spring.io/spring-cloud-config/)
+- [Project Documentation](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/1.4.2.RELEASE/single/spring-cloud-config.html)
+- [Spring External Configuration Orders of Precedence](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
+- [How to push config via git webhook](https://spencergibb.netlify.com/blog/2015/09/24/spring-cloud-config-push-notifications/)
+- [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html)
 
 ### Spring Cloud Bus
 
