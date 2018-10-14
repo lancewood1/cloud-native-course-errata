@@ -1,23 +1,31 @@
 # Cloud Native References and Errata
 
-## Challenge questions
+## Push to the Cloud
 
-### Push to the Cloud
+### Knwon issues
+  - "python" app does not have correct dependency - you have to add the
+    "flask" to the "requirements.txt"
+  - "ruby" application needs to change the Ruby version in the Gemfile
 
-- Why, everytime you push an app, are the list of buildpacks downloaded again?
-- How many containers are needed for pushing an app?
-- Why do you see "container gets created and destroyed" as part of pushing app?
-- Can you find diagram that shows the sequence of internal operations
-that occur when pushing an application? (Google "PCF how applications are staged".)
-- What is the "org"/"space" structure in your PCF installation?
-- Why do you have to use "--random-route"? What is the "cf push" option
-  that lets you specify the hostname part of a route? ("cf push -h")
-- Suppose you deployed an application with "cf push <app-name> -m 768M",
-  what would be memory allocated when you re-deployed the same application
-  with "cf push <app-name>"?
+### Challenge questions
+  - Why, everytime you push an app, are the list of buildpacks downloaded again?
+  - How many containers are needed for pushing an app?
+  - Why do you see "container gets created and destroyed" as part of pushing app?
+  - Can you find diagram that shows the sequence of internal operations
+    that occur when pushing an application? (Google "PCF how applications are staged".)
+  - What is the "org"/"space" structure in your PCF installation?
+  - Why do you have to use "--random-route"? What is the "cf push" option
+    that lets you specify the hostname part of a route? ("cf push -h")
+  - Suppose you deployed an application with "cf push <app-name> -m 768M",
+    what would be memory allocated when you re-deployed the same application
+   with "cf push <app-name>"?
 
-### Logging
+## Logging
 
+### Known issues
+- Java applciation requires 768M 
+
+### Challenge questions
 - Where should your application write logs? Is it a good practice
   write logs to a file?
 - What are some of the different origin codes seen in the log?
@@ -25,7 +33,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Can you find "PCF architecture diagram"? (Google it!)
 - How does this change how you access logs today? At scale?
 
-### Scaling
+## Scaling
 
 - What is the preferred, "scaling out" or "scaling up"?  Why?
 - What the origin code(s) that show "number of instances increase/decreased"?
@@ -37,12 +45,12 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Is there "auto-scaling" service that automatically scales up
   or scale down depending on CPU utilization, latency, etc?
 
-### HA
+## HA
 
 - How could you determine if your application has been crashing?
 - What are 4 HA features in PCF?
 
-### Services
+## Services
 
 - What does "create service" do? What about "bind service"?
 - What is the difference between "restart" and "restaging"? What
@@ -54,7 +62,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
 
-### Buildpacks
+## Buildpacks
 
 - What are the buildpack scripts that get executed when creating a droplet?
   (Google "pcf understanding buildpacks")
@@ -62,7 +70,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - What is the pros and cons of using buildpack (to create an container image)
   as opposed to using docker image?
 
-### Blue-Green deployment
+## Blue-Green deployment
 
 - Can an application have multiple routes?
 - Can a route be applied to multiple applications?
@@ -74,9 +82,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - What are the constraints of Blue-Green deployment?
 - What types of versions is the PCF Blue-Green deployment good for?  See about [Semantic Versioning=](https://semver.org/)
 
-### Spring Boot
+## Spring Boot
 
-#### Spring vs. Spring Boot
+### Spring vs. Spring Boot
 
 - Before you do the lab
   - Skip the first part of the lab (creating Spring MVC app).
@@ -110,11 +118,11 @@ that occur when pushing an application? (Google "PCF how applications are staged
     for each scheme?
   - What are the 4 major features Spring Boot provide?
 
-#### Spring Boot Internals
+### Spring Boot Internals
 
 - Which auto-configuration is used for auto-configuring data source object?
 
-#### Data Access Lab
+## Data Access Lab
 
 - Name some of the Enterprise Application Patterns implemented by the Snippet Manager.
 - Why are there different Snippet objects (i.e. SnippetRecord vs. SnippetInfo)?
@@ -123,7 +131,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 	- What is the Java programming style/API used?
 	- How might you refactor the solution to account for hosting active or inactive Snippets, and filtering only active records?
 
-#### Actuator
+## Actuator
 
 - Before you do the lab
   - Skip the "Challenge" part of the lab in the document
@@ -139,9 +147,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
     "number of times a call is made" as described in the lab document
     a good practice?  Is there an alternative?
 
-### Spring Cloud Services
+## Spring Cloud Services
 
-#### Setup for Bitbucket/GitHub
+### Setup for Bitbucket/GitHub
 
 - You will authenticate with Bitbucket/GitHub using ssh keys. Follow
   [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to
@@ -153,7 +161,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
  	- [option #2] git clone https://\<sid\>@bitbucketdc.\<company\>.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
  	- [option #3] git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs
 
-#### Setup your Config Server
+### Setup your Config Server
 
 - Make sure "app-config" and "spring-cloud-services-labs" directories are two
  separate directories: in other words, do not make one to be under the other
@@ -179,7 +187,7 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 - You may build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)
 
-#### Config server
+### Config server
 
 - What happens to your application by default if config server is down during its startup?
 - What happens to your application by default if config server is down during actuator refresh?
@@ -187,9 +195,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
 - Configure your application to use a retry/backoff policy on a config server fail-fast.
 - How might you handle configuration changes of database passwords with zero downtime?
 
-#### Client Load Balancing
+## Client Load Balancing
 
-#### Hystrix
+### Hystrix
 
 - Distinguish between Transient and Persistent Resource failure.
 - Does Hystrix help protect against either/or/both Transient and Persistent failures? How?
@@ -205,12 +213,9 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 ## FAQ
 
-## Known Issues
+### Known Issues
 
-- Push to the Cloud
-  - "python" app does not have correct dependency - you have to add the
-    "flask" to the "requirements.txt"
-  - "ruby" application needs to change the Ruby version in the Gemfile
+
 
 - General
   - The URL of the "console" (App manager) should start with "console..." but
