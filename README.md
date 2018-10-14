@@ -1,5 +1,7 @@
 # Cloud Native References and Errata
 
+# Introduction to The Cloud
+
 ## Push to the Cloud
 
 ### Known issues
@@ -68,11 +70,11 @@
 - How could you determine if your application has been crashing?
 - What are 4 HA features in PCF?
 
-### Lab extras
+### Lab extras (if you finish earlier than others)
 
 -   Do `cf ssh articulate` and display the values of the
     environment variables using 
-    `echo $<environment-variable-name>`
+    `echo $<environment-variable-name>` (if `cf ssh` is enabled)
 
 -   Use Java option to reduce the memory requirement
     of your Spring app as following
@@ -97,6 +99,16 @@
       routes:
       - route: spring-music-unemigrant-nontransportation.cfapps.io
     ```
+    
+-   Push docker image `tutum/hello-world` (Figure out what
+    option you have to use)
+    
+-   [This is disabled in GAIA] Install and use `cf cli open` plugin as described in
+    [Cloud Foundry community](https://plugins.cloudfoundry.org/)
+    
+    ```
+    cf install-plugin -r CF-Community "open"
+    ```
 
 ## Services
 
@@ -114,7 +126,7 @@
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
 
-### Lab extras (if you finish earlier than others)
+### Lab extras
 
 - Use `Papertrail` as a user provided service
 
@@ -169,11 +181,14 @@
 
 ### Before you do the lab
 
-  - Skip the first part of the lab (creating Spring MVC app).
-    Just do the second part of the lab (creating Spring Boot app).
+  - Skip the first part of the lab 
+    `Creating a Spring Web Application` given that this is just 
+    to show how much more work you have to do
+    Just do the second part of the lab 
+    `reating a Spring Boot Web Application`
   - Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
     if you are creating a Spring Boot app from "start.spring.io".
-  - If you are creating an Spring Boot app from internal "go/moneta",
+  - If you are creating an Spring Boot app from internal `go/moneta`,
     it is already using "Spring Boot 1.5.x"
   - Make sure you are using Java 8
   - If you experience Maven build problem, make sure you set the
@@ -186,8 +201,8 @@
     
 ### Lab extras
 
-  - Add "message" property to application.yml (or application.properties)
-    and use it as a string that gets returned (instead of "hello world")
+  - Add `message` property to `application.yml` (or `application.properties`)
+    and use it as a string that gets returned (instead of "Hello world")
   - Use different port (instead of default port of 8080)
     by setting `server.port` property
   - Use customer banner: create one from 
@@ -226,27 +241,42 @@
 
 ### Lab extras
 
+- Take a look `DataSourceConfiguration` class, which auto-configures
+  `DataSource` bean
 - Review the `SnippetController.snippets` GET method.
 	- What is the Java programming style/API used?
-	- How might you refactor the solution to account for hosting active or inactive Snippets, and filtering only active records?
+	- How might you refactor the solution to account for 
+	  hosting active or inactive Snippets, and filtering 
+	  only active records?
 
 ## Actuator
 
 ### Before you do the lab
 
-  - Skip the `Challenge` part of the lab in the document
-  - Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
+  - When creating Spring Boot project 
+    from [Spring Initialer](https://start.spring.io/),
+    make sure you choose Spring Boot 1.5.x (not Spring Boot 2.0.x
+    (This is because this lab document assumes you are using
+    Spring Bootk 1.5.x)
+  - Skip the `Challenges` part of the lab in the middle of
+    the document
+  - Lab document assumes you are using Gradle. If you are 
+    using Maven, just add Maven dependency.
 
 ### Lab extras
-  - Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory
-    is less than 0.9, return `DOWN` status. Otherwise, 
-    return `UP` status.
-    (The solution project is available from 
-    [here](https://github.com/sashinpivotal/helloworld1)
+
+  - Add `MemoryHealthIndicator` (The solution project is 
+    available from 
+    [here](https://github.com/sashinpivotal/helloworld1))
+    - If the ratio of freeMemory/totalMemory
+      is less than 0.9, return `DOWN` status. 
+    - Otherwise, return `UP` status.
+      
+  - Add build information as described 
+    [here](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html)
 
 ### Challenge questions
 
-  - Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
   - How to use Actuator health checks in Cloud Foundry 
     to discard unhealthy AI's?
   - Is adding "instrumentation" code such as counting
@@ -258,12 +288,13 @@
 
 ## Setup for Bitbucket/GitHub
 
-- You will authenticate with Bitbucket/GitHub using `ssh` keys.
+- You will authenticate with Bitbucket/GitHub using `ssh` key.
   - Follow
   [the instruction](https://help.github.com/articles/connecting-to-github-with-ssh/) 
   to create an ssh key pair and add the public key to 
   your GitHub account.
-  - Do not add a `passphrase` to this key when you are 
+  - When you create `ssh` key, do not add a `passphrase` 
+    to this key when you are 
     creating ssh key, as it might make things difficult 
     for some of the labs.
   
@@ -279,8 +310,10 @@
 
 ### Before you get started
 
-- Make sure `app-config` and `spring-cloud-services-labs` directories are two
- separate directories: in other words, do not make one to be under the other.  The following shows a correct directory structure.
+- Make sure `app-config` and `spring-cloud-services-labs` 
+  directories are two
+  separate directories: in other words, do not make one to be under
+  the other.  The following shows a correct directory structure.
  
  ```
  drwxr-xr-x   4 sang  staff   128B Jun 22 16:22 app-config/
@@ -290,9 +323,9 @@
  drwxr-xr-x  17 sang  staff   544B Mar  6  2018 spring-cloud-services-labs/
  ```
  
-- If you have not set up ssh key (or somehow it is not working),
-  use local "app-config" directory as your repository 
-  as a temporary means
+- If you have not set up `ssh` key (or somehow it is not working),
+  use local `app-config` directory as your repository 
+  as a temporary means as shown below
   
    ```yml
    server:
@@ -314,7 +347,8 @@
 	quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
 	```
 	
-  Build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)	
+  Build and deploy your own quote server from 
+  [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)	
  
 ### Tool Recommendations 
   
@@ -331,7 +365,8 @@
   server is down during its startup?
 - What happens to your application by default if config 
   server is down during actuator refresh?
-- How might you handle configuration changes of database passwords with zero downtime?
+- How might you handle configuration changes of database 
+  passwords with zero downtime?
 
 ### Lab extras
 
@@ -352,18 +387,26 @@
 ### Challenge questions
 
 - Distinguish between Transient and Persistent Resource failure.
-- Does Hystrix help protect against either/or/both Transient and Persistent failures? How?
-- Classify the use of the following downstream integration APIs in your Hystrix protected methods as either "Trusted" or "Untrusted", and explain why:
+- Does Hystrix help protect against either/or/both Transient 
+  and Persistent failures? How?
+- Classify the use of the following downstream integration APIs 
+  in your Hystrix protected methods as either "Trusted" or 
+  "Untrusted", and explain why:
 	 - Use of SolrCloud API
 	 - Use of Zookeeper API
 	 - EJB Client Kit
 	 - A Rest Template managed by the hosting Spring Boot application
-- Which Hystrix isolation strategy is more appropriate for Trusted clients?  Which is more appropriate for Untrusted clients?
-- Should you use Hystrix to protect against transactionally sensitive operations?  Why or why not?
+- Which Hystrix isolation strategy is more appropriate for 
+  Trusted clients?  Which is more appropriate for Untrusted clients?
+- Should you use Hystrix to protect against transactionally 
+  sensitive operations?  Why or why not?
 
 ### Lab extras
 
-- Configure Hystrix in your application to use Semaphore isolation strategy, restart your applications and hystrix dashboard, and execute some requests.  Do you see thread pools in your dashboard?  Why or why not?
+- Configure Hystrix in your application to use Semaphore isolation
+  strategy, restart your applications and hystrix dashboard, and 
+  execute some requests.  Do you see thread pools in your dashboard?   
+  Why or why not?
 
 ### Hystrix demo code
 
