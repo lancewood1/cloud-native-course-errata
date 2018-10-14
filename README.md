@@ -73,10 +73,6 @@
 
 ### Lab extras (for pushing Java app)
 
--   Do `cf ssh articulate` and display the values of the
-    environment variables using 
-    `echo $<environment-variable-name>` (if `cf ssh` is enabled)
-
 -   Use Java option to reduce the memory requirement
     of your Spring app as following
         
@@ -104,7 +100,16 @@
 -   Push docker image `tutum/hello-world` (Figure out what
     option you have to use)
     
--   [This is disabled in GAIA] Install and use `cf cli open` plugin as described in
+-   [This is disabled in GAIA] Do `cf ssh articulate` 
+    and display the values of the
+    environment variables using 
+    
+    ```
+    $echo $<environment-variable-name>
+    ```
+    
+-   [This is disabled in GAIA] Install and use `cf cli open` 
+    plugin as described in
     [Cloud Foundry community](https://plugins.cloudfoundry.org/)
     
     ```
