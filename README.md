@@ -192,11 +192,14 @@
   (See if there is "cf" command for this.)
 - Is a route unique per PCF installation, per org, or per space?
 - What are the constraints of Blue-Green deployment?
-- What types of versions is the PCF Blue-Green deployment good for?  See about [Semantic Versioning=](https://semver.org/)
+- What types of versions is the PCF Blue-Green deployment 
+  good for?  See about [Semantic Versioning](https://semver.org/)
 
 ### Lab extras
 
-- Use [blue-green-deployment](https://github.com/bluemixgaragelondon/cf-blue-green-deploy) plugin for 
+- [This is disabled in GAIA] Use 
+  [blue-green-deployment](https://github.com/bluemixgaragelondon/cf-blue-green-deploy) 
+  plugin for 
   automating the process of blue-green-deployment
   
 # Spring Boot
@@ -220,7 +223,7 @@
   - If you experience Maven build problem, make sure you set the
     correct Maven proxy in your `$HOME/.m2/settings.xml` file
     
-### Trouble-shooting
+### Trouble-shooting tips
 
   - If you experience 404 error when accessing your controller,
     think about the rules of component scanning
@@ -282,8 +285,9 @@
   - When creating Spring Boot project 
     from [Spring Initialer](https://start.spring.io/),
     make sure you choose Spring Boot 1.5.x (not Spring Boot 2.0.x
-    (This is because this lab document assumes you are using
-    Spring Bootk 1.5.x)
+    (This is because the lab document, especially on Actuator
+    part, assumes you are using
+    Spring Boot 1.5.x)
   - Skip the `Challenges` part of the lab in the middle of
     the document
   - Lab document assumes you are using Gradle. If you are 
@@ -327,9 +331,26 @@
 - The `sping cloud services labs` projects can be cloned 
   in the following 3 ways: use one that works for you.
 
-    - [option #1] git clone ssh://git@bitbucketdc.\<company\>.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you set up your ssh key)
- 	- [option #2] git clone https://\<sid\>@bitbucketdc.\<company\>.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you're having a problem using option #1)
- 	- [option #3] git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs (if you're having a problem using #1 and #2 above)
+   - Option #1: choose this if you set up your ssh key
+     (This is the way official lab document suggests)
+
+       ```
+       git clone ssh://git@bitbucketdc-ssh.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs 
+       ```
+   
+ 	- option #2: choose this if you're having a problem 
+ 	  using option #1
+
+ 	    ```
+ 	    git clone https://<sid>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
+ 	    ``` 
+ 	
+ 	- Option #3: choose this if you're having a problem 
+ 	  using #1 and #2 above
+
+ 	    ```
+ 	    git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs 
+ 	    ```
 
 
 ## Config Server
