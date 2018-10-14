@@ -2,10 +2,12 @@
 
 ## Push to the Cloud
 
-### Knwon issues
+### Known issues
   - "python" app does not have correct dependency - you have to add the
     "flask" to the "requirements.txt"
   - "ruby" application needs to change the Ruby version in the Gemfile
+  - The URL of the "console" (App manager) should start with "console..." but
+    lab document (or email) says "login..."
 
 ### Challenge questions
   - Why, everytime you push an app, are the list of buildpacks downloaded again?
@@ -20,12 +22,28 @@
     what would be memory allocated when you re-deployed the same application
    with "cf push <app-name>"?
 
-## Logging
 
-### Known issues
-- Java applciation requires 768M 
+## Logging, Scale, HA
 
-### Challenge questions
+### Trouble-shooting
+
+- If you see the following error in the log, it means you will
+  need to bump up the memory for your app 
+  
+  ```
+     2018-10-14T10:08:27.14-0400 [APP/PROC/WEB/0] ERR Cannot calculate JVM memory configuration: There is insufficient memory remaining for heap. 
+     Memory available for allocation 512M is less than allocated memory 623337K (-XX:ReservedCodeCacheSize=240M, -XX:MaxDirectMemorySize=10M, -XX:MaxMetaspaceSize=111337K, -Xss1M * 250 threads)
+  ``` 
+
+### Challenge questions on pushing Java app
+
+- What are the environment variables that are automatically set
+  by PCF? (Google `Cloud Foundry Environment Variables`)
+- What is the auto-configuration is being performed when
+  you push an application?  See [here](https://github.com/cloudfoundry/java-buildpack-auto-reconfiguration) for an anwser.
+
+### Challenge questions on Logging
+
 - Where should your application write logs? Is it a good practice
   write logs to a file?
 - What are some of the different origin codes seen in the log?
@@ -33,7 +51,7 @@
 - Can you find "PCF architecture diagram"? (Google it!)
 - How does this change how you access logs today? At scale?
 
-## Scaling
+### Challenge questions on Scaling
 
 - What is the preferred, "scaling out" or "scaling up"?  Why?
 - What the origin code(s) that show "number of instances increase/decreased"?
@@ -45,32 +63,90 @@
 - Is there "auto-scaling" service that automatically scales up
   or scale down depending on CPU utilization, latency, etc?
 
-## HA
+### Challenge questions on HA
 
 - How could you determine if your application has been crashing?
 - What are 4 HA features in PCF?
 
+### Lab extras
+
+-   Do `cf ssh articulate` and display the values of the
+    environment variables using 
+    `echo $<environment-variable-name>`
+
+-   Use Java option to reduce the memory requirement
+    of your Spring app as following
+        
+    ```
+    cf push spring-music -p ./build/libs/spring-music-1.0.jar --random-route -m 512M --no-start
+    cf set-env spring-music JAVA_OPTS -Xss228K
+    cf start spring-music
+    ```
+    
+    or set it in the manifest file
+    
+    ```
+    applications:
+    - name: spring-music
+      disk_quota: 1G
+      env:
+        JAVA_OPTS: -Xss228K
+      instances: 1
+      memory: 512M
+      path: ./build/libs/spring-music-1.0.jar
+      routes:
+      - route: spring-music-unemigrant-nontransportation.cfapps.io
+    ```
+
 ## Services
+
+### Challenge questions
 
 - What does "create service" do? What about "bind service"?
 - What is the difference between "restart" and "restaging"? What
   could be use cases you will have to do "restaging"?
 - What is the difference between "managed service" (service found
-  in the "cf marketplace") and "non-managed service" ("user provided service")?
-- What are the 3 use cases of "user provided service"? ("cf cups -h")
+  in the "cf marketplace") and "non-managed service" 
+  ("user provided service")?
+- What are the 3 use cases of "user provided service"? 
+  ("cf cups -h")
 - From an application perspective, are managed services
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
 
+### Lab extras (if you finish earlier than others)
+
+- Use `Papertrail` as a user provided service
+
+  - Sign up for an account at 
+    [Papertrail](https://papertrailapp.com/)
+  - Follow the [instruction](http://help.papertrailapp.com/kb/hosting-services/cloud-foundry/)
+
 ## Buildpacks
+
+### Challenge questions
 
 - What are the buildpack scripts that get executed when creating a droplet?
   (Google "pcf understanding buildpacks")
 - What is the buildpack script that gets omitted when you deploy a docker image?
 - What is the pros and cons of using buildpack (to create an container image)
   as opposed to using docker image?
+  
+### Lab extras
+
+-   Do `cf ssh articulate` and see which command 
+    is executed by the `release` script.  
+-   Do the same for `Node` and `Ruby` applications
 
 ## Blue-Green deployment
+
+### Known issues
+
+  - Internet Exploder breaks on Blue Green - use Chrome
+  - lab document uses the term `subdomain`, 
+    which is actually `hostname`
+
+### Challenge questions
 
 - Can an application have multiple routes?
 - Can a route be applied to multiple applications?
@@ -82,11 +158,17 @@
 - What are the constraints of Blue-Green deployment?
 - What types of versions is the PCF Blue-Green deployment good for?  See about [Semantic Versioning=](https://semver.org/)
 
-## Spring Boot
+### Lab extras
 
-### Spring vs. Spring Boot
+- Use [blue-green-deployment](https://github.com/bluemixgaragelondon/cf-blue-green-deploy) plugin for 
+  automating the process of blue-green-deployment
+  
+# Spring Boot
 
-- Before you do the lab
+## Spring vs. Spring Boot
+
+### Before you do the lab
+
   - Skip the first part of the lab (creating Spring MVC app).
     Just do the second part of the lab (creating Spring Boot app).
   - Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
@@ -95,79 +177,124 @@
     it is already using "Spring Boot 1.5.x"
   - Make sure you are using Java 8
   - If you experience Maven build problem, make sure you set the
-    correct Maven proxy in your <Home-directory>/.m2/settings.xml file
-- Trouble-shooting
+    correct Maven proxy in your `$HOME/.m2/settings.xml` file
+    
+### Trouble-shooting
+
   - If you experience 404 error when accessing your controller,
     think about the rules of component scanning
-- Lab extras
+    
+### Lab extras
+
   - Add "message" property to application.yml (or application.properties)
     and use it as a string that gets returned (instead of "hello world")
   - Use different port (instead of default port of 8080)
-    by setting "server.port" property
-  - Use customer banner: create one from patorjk.com by creating "banner.txt"
-    under /src/main/resources directory (google "spring boot banner patorjk")
-  - Create spring profile: "dev" and "production" from which different
+    by setting `server.port` property
+  - Use customer banner: create one from 
+    [patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) 
+    by creating "banner.txt"
+    under /src/main/resources directory 
+  - Create spring profile: `dev` and `production` 
+    from which different
     message value can be extracted
-  - Create external property file(s) as opposed to the property files
+  - Create external property file(s) as opposed 
+    to the property files
     inside the jar file
   - Deploy the application to the cloud and run with dev profile
   - Create manifest file using "create-app-manifest"
   - Deploy the app using the newly created manifest file
-- Challenge questions
-  - What are three ways to config Spring bean? What are the use cases
+
+### Challenge questions
+
+  - What are three ways to config Spring bean? 
+    What are the use cases
     for each scheme?
   - What are the 4 major features Spring Boot provide?
 
-### Spring Boot Internals
+## Spring Boot Internals
 
-- Which auto-configuration is used for auto-configuring data source object?
+- Which auto-configuration is used for auto-configuring 
+  data source object?
 
-## Data Access Lab
+## Data Access
+
+### Challenge questions
 
 - Name some of the Enterprise Application Patterns implemented by the Snippet Manager.
 - Why are there different Snippet objects (i.e. SnippetRecord vs. SnippetInfo)?
 - How might you reuse or refactor the solution to support either synchronous over HTTP, or an asynchronous solution adding or updating Snippets through AMQP or Kafka?
+
+### Lab extras
+
 - Review the `SnippetController.snippets` GET method.
 	- What is the Java programming style/API used?
 	- How might you refactor the solution to account for hosting active or inactive Snippets, and filtering only active records?
 
 ## Actuator
 
-- Before you do the lab
-  - Skip the "Challenge" part of the lab in the document
+### Before you do the lab
+
+  - Skip the `Challenge` part of the lab in the document
   - Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
-- Lab extras
+
+### Lab extras
   - Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory
-    is less than 0.9, return `DOWN` status. Otherwise, return `UP` status.
-    (The solution project is available from https://github.com/sashinpivotal/helloworld1)
-- Challenge questions
+    is less than 0.9, return `DOWN` status. Otherwise, 
+    return `UP` status.
+    (The solution project is available from 
+    [here](https://github.com/sashinpivotal/helloworld1)
+
+### Challenge questions
+
   - Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
-  - How to use Actuator health checks in Cloud Foundry to discard unhealthy AI's?
+  - How to use Actuator health checks in Cloud Foundry 
+    to discard unhealthy AI's?
   - Is adding "instrumentation" code such as counting
-    "number of times a call is made" as described in the lab document
+    "number of times a call is made" as described in the 
+    lab document
     a good practice?  Is there an alternative?
 
-## Spring Cloud Services
+# Spring Cloud Services
 
-### Setup for Bitbucket/GitHub
+## Setup for Bitbucket/GitHub
 
-- You will authenticate with Bitbucket/GitHub using ssh keys. Follow
-  [these directions](https://help.github.com/articles/connecting-to-github-with-ssh/) to
-  create an ssh key pair and add the public key to your GitHub account.
-  Do not add a passphrase to this key when you are creating ssh key,
-  as it might make things difficult for some of the labs.
-- The "sping cloud services labs" projects can be cloned in the following 3 ways
+- You will authenticate with Bitbucket/GitHub using `ssh` keys.
+  - Follow
+  [the instruction](https://help.github.com/articles/connecting-to-github-with-ssh/) 
+  to create an ssh key pair and add the public key to 
+  your GitHub account.
+  - Do not add a `passphrase` to this key when you are 
+    creating ssh key, as it might make things difficult 
+    for some of the labs.
+  
+- The `sping cloud services labs` projects can be cloned 
+  in the following 3 ways: use one that works for you.
+
     - [option #1] git clone ssh://git@bitbucketdc.\<company\>.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you set up your ssh key)
- 	- [option #2] git clone https://\<sid\>@bitbucketdc.\<company\>.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
- 	- [option #3] git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs
+ 	- [option #2] git clone https://\<sid\>@bitbucketdc.\<company\>.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs (if you're having a problem using option #1)
+ 	- [option #3] git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs (if you're having a problem using #1 and #2 above)
 
-### Setup your Config Server
 
-- Make sure "app-config" and "spring-cloud-services-labs" directories are two
- separate directories: in other words, do not make one to be under the other
+## Config Server
+
+### Before you get started
+
+- Make sure `app-config` and `spring-cloud-services-labs` directories are two
+ separate directories: in other words, do not make one to be under the other.  The following shows a correct directory structure.
+ 
+ ```
+ drwxr-xr-x   4 sang  staff   128B Jun 22 16:22 app-config/
+ drwxr-xr-x   3 sang  staff    96B Mar  5  2018 articulate/
+ drwxr-xr-x   3 sang  staff    96B Mar  5  2018 attendee-service/
+ drwxr-xr-x   9 sang  staff   288B Mar 19  2018 demo-apps/
+ drwxr-xr-x  17 sang  staff   544B Mar  6  2018 spring-cloud-services-labs/
+ ```
+ 
 - If you have not set up ssh key (or somehow it is not working),
-  use local "app-config" directory as your repository as a temporary means
-```yml
+  use local "app-config" directory as your repository 
+  as a temporary means
+  
+   ```yml
    server:
      port: 8888
 
@@ -178,68 +305,85 @@
            git:
              uri: file:///C:\tmp\app-config
 
-```
-- Please note that the quote server mentioned in the lab document is not working
+   ```
+
+- Please note that the quote server mentioned in the 
+  lab document as shown below is not working
 
 	```yml
 	quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
 	```
+	
+  Build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)	
+ 
+### Tool Recommendations 
+  
+- If you are using IntelliJ Ultimate Edition or STS, 
+  please feel free to use `Spring Boot Dashboard`
+  
+- If you are using `Windows`, please feel free to use
+  [ConEMU shell](https://conemu.github.io/) 
 
-- You may build and deploy your own from [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)
 
-### Config server
+### Challenge questions
 
-- What happens to your application by default if config server is down during its startup?
-- What happens to your application by default if config server is down during actuator refresh?
-- Configure your application to fail-fast if config server is not available during start up.
-- Configure your application to use a retry/backoff policy on a config server fail-fast.
+- What happens to your application by default if config 
+  server is down during its startup?
+- What happens to your application by default if config 
+  server is down during actuator refresh?
 - How might you handle configuration changes of database passwords with zero downtime?
+
+### Lab extras
+
+- Configure your application to fail-fast if config 
+  server is not available during start up.
+- Configure your application to use a retry/backoff 
+  policy on a config server fail-fast.
 
 ## Client Load Balancing
 
-### Hystrix
+### Challenge quetions
+
+- Would you want to use Client load balancing for 
+  public-facing applications?
+
+## Circuit Breakers
+
+### Challenge questions
 
 - Distinguish between Transient and Persistent Resource failure.
 - Does Hystrix help protect against either/or/both Transient and Persistent failures? How?
 - Classify the use of the following downstream integration APIs in your Hystrix protected methods as either "Trusted" or "Untrusted", and explain why:
-	- Use of SolrCloud API
-	- Use of Zookeeper API
-	- EJB Client Kit
-	- A Rest Template managed by the hosting Spring Boot application
+	 - Use of SolrCloud API
+	 - Use of Zookeeper API
+	 - EJB Client Kit
+	 - A Rest Template managed by the hosting Spring Boot application
 - Which Hystrix isolation strategy is more appropriate for Trusted clients?  Which is more appropriate for Untrusted clients?
-- Configure Hystrix in your application to use Semaphore isolation strategy, restart your applications and hystrix dashboard, and execute some requests.  Do you see thread pools in your dashboard?  Why or why not?
 - Should you use Hystrix to protect against transactionally sensitive operations?  Why or why not?
-- For a demo of Hystrix fault tolerance characteristics, see here: https://github.com/pivotal-bill-kable/spring-cloud-netflix-oss-ft-demos
 
-## FAQ
+### Lab extras
 
-### Known Issues
+- Configure Hystrix in your application to use Semaphore isolation strategy, restart your applications and hystrix dashboard, and execute some requests.  Do you see thread pools in your dashboard?  Why or why not?
 
+### Hystrix demo code
 
-
-- General
-  - The URL of the "console" (App manager) should start with "console..." but
-    lab document (or email) says "login..."
-
-- Blue Green deployment lab
-  - Internet Exploder breaks on Blue Green - use Chrome
-  - lab document uses the term "subdomain", which is actually "hostname"
+- For a demo of Hystrix fault tolerance characteristics, see [here](https://github.com/pivotal-bill-kable/spring-cloud-netflix-oss-ft-demos)
 
 
-## List of References
+# References
 
-### Pivotal Cloud Foundry References
+## Pivotal Cloud Foundry References
 
 - Pivotal Cloud Foundry Architecture: https://docs.pivotal.io/pivotalcf/2-1/concepts/diego/diego-architecture.html
 - Cloud Foundry Services: https://docs.cloudfoundry.org/services/overview.html
 - Healthchecks: https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html
 
-### Spring Cloud - Cloud Native References
+## Spring Cloud - Cloud Native References
 
 Following are some suggested references - books, courses, blogs, articles and videos to give a deeper dive into Spring Cloud
 and Cloud Native Developer courses:
 
-#### Some good overview Pluralsight courses
+### Some good overview Pluralsight courses
 
 - Cloud Foundry for Developers: https://app.pluralsight.com/library/courses/cloud-foundry-developers/table-of-contents
 - Pivotal Cloud Foundry for Developers: https://app.pluralsight.com/library/courses/cloud-foundry-developer-1dot7-pivotal/table-of-contents
@@ -248,7 +392,7 @@ and Cloud Native Developer courses:
 - Git Intro: https://app.pluralsight.com/library/courses/how-git-works/table-of-contents
 - Git Advanced: https://app.pluralsight.com/library/courses/mastering-git/table-of-contents
 
-#### App Performance Test Tools
+### App Performance Test Tools
 
 Following are useful open tools in order of simplicity vs. flexibility
 
@@ -261,7 +405,7 @@ Following are useful open tools in order of simplicity vs. flexibility
 - Blazemeter: https://www.blazemeter.com/
 - Gatling: https://gatling.io/
 
-#### Development, Design, and Cloud Native Migration Strategies
+### Development, Design, and Cloud Native Migration Strategies
 
 - This site covers strategy of evolving applications from MVP (Minimum Viable Product, unstructured apps, through modularized monoliths, to distributed systems: http://www.appcontinuum.io/
 - A great Spring One 2017 Talk about practical use of SOLID principles: https://springoneplatform.io/sessions/solid-in-the-wild-life-when-your-software-is-actually-soft
@@ -275,17 +419,17 @@ Following are useful open tools in order of simplicity vs. flexibility
 - "Online migration at scale blog": https://stripe.com/blog/online-migrations
 
 
-#### Spring Boot Plugins (building and packaging Springboot Apps):
+### Spring Boot Plugins (building and packaging Springboot Apps):
 - Gradle Springboot Plugin: https://docs.spring.io/spring-boot/docs/2.0.1.BUILD-SNAPSHOT/gradle-plugin/reference/html/
 - Maven Springboot Plugin: https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#build-tool-plugins-maven-plugin
 - Enterprise Application Patterns: https://martinfowler.com/eaaCatalog/index.html
 - Enterprise Integration Patterns: http://www.enterpriseintegrationpatterns.com/
 
-#### Spring Cloud on .NET
+### Spring Cloud on .NET
 
 - Steeltoe (Spring Cloud Config Server and Spring Cloud Netflix on .NET): https://steeltoe.io/
 
-#### Netflix OSS Docs
+### Netflix OSS Docs
 
 - Ribbon Wiki: https://github.com/Netflix/Ribbon/wiki
 - Hystrix Wiki: https://github.com/Netflix/Hystrix/wiki
@@ -296,12 +440,12 @@ Following are useful open tools in order of simplicity vs. flexibility
 - Eureka Wiki: https://github.com/Netflix/Eureka/wiki
 - Nebula build plugins: https://nebula-plugins.github.io/
 
-#### Spring Cloud Netflix - Eureka, Ribbon, Hystrix
+### Spring Cloud Netflix - Eureka, Ribbon, Hystrix
 
 - Project Home: https://cloud.spring.io/spring-cloud-netflix/
 - Product Documentation: http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.4.3.RELEASE/single/spring-cloud-netflix.html
 
-#### Spring Cloud Config
+### Spring Cloud Config
 
 - Project Home: https://cloud.spring.io/spring-cloud-config/
 - Project Documentation: http://cloud.spring.io/spring-cloud-static/spring-cloud-config/1.4.2.RELEASE/single/spring-cloud-config.html
@@ -309,12 +453,12 @@ Following are useful open tools in order of simplicity vs. flexibility
 - How to push config via git webhook: https://spencergibb.netlify.com/blog/2015/09/24/spring-cloud-config-push-notifications/
 - Feature Toggles: https://martinfowler.com/articles/feature-toggles.html
 
-#### Spring Cloud Bus
+### Spring Cloud Bus
 
 - Home: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html
 - Targeting application for config bus refresh: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html#_addressing_all_instances_of_a_service
 
-#### Spring Cloud Commons - Useful for seeing what's under the hood
+### Spring Cloud Commons - Useful for seeing what's under the hood
 
 - Project Home: https://cloud.spring.io/spring-cloud-commons/
 - Projection Documention: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html
@@ -323,7 +467,7 @@ Following are useful open tools in order of simplicity vs. flexibility
 - Configuring Http Clients: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#http-clients
 - Abstracting different Spring Cloud Service Registries: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#__enablediscoveryclient
 
-#### Pivotal Cloud Foundry - Spring Cloud Services
+### Pivotal Cloud Foundry - Spring Cloud Services
 
 - Home: http://docs.pivotal.io/spring-cloud-services/1-4/common/index.html
 - Dependencies Matrix: http://docs.pivotal.io/spring-cloud-services/1-4/common/client-dependencies.html
@@ -331,17 +475,17 @@ Following are useful open tools in order of simplicity vs. flexibility
 - GoRouter does honor Ribbon load balancing algorithm: http://docs.pivotal.io/spring-cloud-services/1-4/common/service-registry/connectors.html#instance-specific-routing-in-ribbon
 - Configuring PCF Container-to-Container Networking, Service Registry and Client Load Balancing (SpringOne 2017): https://www.youtube.com/watch?v=1WJhFhBr-0Q
 
-#### Pivotal Cloud Foundry - Security
+### Pivotal Cloud Foundry - Security
 
 - PCF Security: https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa
 
-#### Blogs
+### Blogs
 
 - General blog of Cloud Native, Spring Cloud subjects from a Spring Cloud thought leader: https://spencergibb.netlify.com/
 - Dipping into spring cloud topics from a Spring Cloud contributor: http://ryanjbaxter.com/
 - The Spring Cloud blog: https://spring.io/blog
 
-#### Spring Cloud Dataflow documentation (handling streaming and data centric applications using cloud native patterns and tooling)
+### Spring Cloud Dataflow documentation (handling streaming and data centric applications using cloud native patterns and tooling)
 
 - Project Home: https://cloud.spring.io/spring-cloud-dataflow/
 - Project Reference: https://docs.spring.io/spring-cloud-dataflow-samples/docs/current/reference/htmlsingle/
