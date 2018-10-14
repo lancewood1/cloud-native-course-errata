@@ -125,16 +125,19 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 #### Actuator
 
-- Skip the "Challenge" part of the lab in the document
-- Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
-- Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
-- Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory
-  is less than 0.9, return `DOWN` status. Otherwise, return `UP` status.
-  (The solution project is available from https://github.com/sashinpivotal/helloworld1)
-- How to use Actuator health checks in Cloud Foundry to discard unhealthy AI's?
-- Is adding "instrumentation" code such as counting
-  "number of times a call is made" as described in the lab document
-  a good practice?  Is there an alternative?
+- Before you do the lab
+  - Skip the "Challenge" part of the lab in the document
+  - Lab document assumes you are using Gradle. If you are using Maven, just add Maven dependency.
+- Lab extras
+  - Add `MemoryHealthIndicator`: if the ratio of freeMemory/totalMemory
+    is less than 0.9, return `DOWN` status. Otherwise, return `UP` status.
+    (The solution project is available from https://github.com/sashinpivotal/helloworld1)
+- Challenge questions
+  - Why is `management.security.enabled` required to be set in `application.yml` or `application.properties`?
+  - How to use Actuator health checks in Cloud Foundry to discard unhealthy AI's?
+  - Is adding "instrumentation" code such as counting
+    "number of times a call is made" as described in the lab document
+    a good practice?  Is there an alternative?
 
 ### Spring Cloud Services
 
