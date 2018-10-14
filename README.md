@@ -548,10 +548,10 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 - [Project Home](https://cloud.spring.io/spring-cloud-commons/)
 - [Projection Documention](http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html)
-- Ribbon Retry Policy: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#_retrying_failed_requests
-- Service Registry - Ignoring Network Interfaces: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#ignore-network-interfaces
-- Configuring Http Clients: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#http-clients
-- Abstracting different Spring Cloud Service Registries: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#__enablediscoveryclient
+- [Ribbon Retry Policy](http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#_retrying_failed_requests)
+- [Service Registry - Ignoring Network Interfaces](http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#ignore-network-interfaces)
+- [Configuring Http Clients](http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#http-clients)
+- [Abstracting different Spring Cloud Service Registries](http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#__enablediscoveryclient)
 
 ### Pivotal Cloud Foundry - Spring Cloud Services
 
@@ -573,12 +573,12 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 ### Spring Cloud Dataflow documentation (handling streaming and data centric applications using cloud native patterns and tooling)
 
-- Project Home: https://cloud.spring.io/spring-cloud-dataflow/
-- Project Reference: https://docs.spring.io/spring-cloud-dataflow-samples/docs/current/reference/htmlsingle/
-- Task Batch: https://docs.spring.io/spring-cloud-dataflow-samples/docs/current/reference/htmlsingle/#_task_batch
-- Using PCF Job Scheduler: http://docs.pivotal.io/pcf-scheduler/1-1/using.html
-- Project Home for Dataflow on PCF: https://cloud.spring.io/spring-cloud-dataflow-server-cloudfoundry/
-- Project Reference for Dataflow on PCF: https://docs.spring.io/spring-cloud-dataflow-server-cloudfoundry/docs/current-SNAPSHOT/reference/htmlsingle/
+- [Project Home](https://cloud.spring.io/spring-cloud-dataflow/)
+- [Project Reference](https://docs.spring.io/spring-cloud-dataflow-samples/docs/current/reference/htmlsingle/)
+- [Task Batch](https://docs.spring.io/spring-cloud-dataflow-samples/docs/current/reference/htmlsingle/#_task_batch)
+- [Using PCF Job Scheduler](http://docs.pivotal.io/pcf-scheduler/1-1/using.html)
+- [Project Home for Dataflow on PCF](https://cloud.spring.io/spring-cloud-dataflow-server-cloudfoundry/)
+- [Project Reference for Dataflow on PCF](https://docs.spring.io/spring-cloud-dataflow-server-cloudfoundry/docs/current-SNAPSHOT/reference/htmlsingle/)
 
 ### Spring Cloud Supplement
 
