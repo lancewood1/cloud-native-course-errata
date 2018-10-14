@@ -1,6 +1,6 @@
 # Cloud Native References and Errata
 
-## Challenges
+## Challenge questions
 
 ### Push to the Cloud
 
@@ -78,33 +78,37 @@ that occur when pushing an application? (Google "PCF how applications are staged
 
 #### Spring vs. Spring Boot
 
-- Skip the first part of the lab (creating Spring MVC app).
-  Just do the second part of the lab (creating Spring Boot app).
-- Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
-  if you are creating a Spring Boot app from "start.spring.io".
-  If you are creating an Spring Boot app from internal "go/moneta",
-  it is already using "Spring Boot 1.5.x"
-- Make sure you are using Java 8
-- If you experience Maven build problem, make sure you set the
-  correct Maven proxy in your /<Home-directory>/.m2/settings.xml file
-- If you experience 404 error when accessing your controller,
-  think about the rules of component scanning
-- Add "message" property to application.yml (or application.properties)
-  and use it as a string that gets returned (instead of "hello world")
-- Use different port (instead of default port of 8080)
-  by setting "server.port" property
-- Use customer banner: create one from patorjk.com by creating "banner.txt"
-  under /src/main/resources directory (google "spring boot banner patorjk")
-- Create spring profile: "dev" and "production" from which different
-  message value can be extracted
-- Create external property file(s) as opposed to the property files
-  inside the jar file
-- Deploy the application to the cloud and run with dev profile
-- Create manifest file using "create-app-manifest"
-- Deploy the app using the newly created manifest file
-- What are three ways to config Spring bean? What are the use cases
-  for each scheme?
-- What are the 4 major features Spring Boot provide?
+- Before you do the lab
+  - Skip the first part of the lab (creating Spring MVC app).
+    Just do the second part of the lab (creating Spring Boot app).
+  - Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
+    if you are creating a Spring Boot app from "start.spring.io".
+  - If you are creating an Spring Boot app from internal "go/moneta",
+    it is already using "Spring Boot 1.5.x"
+  - Make sure you are using Java 8
+  - If you experience Maven build problem, make sure you set the
+    correct Maven proxy in your <Home-directory>/.m2/settings.xml file
+- Trouble-shooting
+  - If you experience 404 error when accessing your controller,
+    think about the rules of component scanning
+- Lab extras
+  - Add "message" property to application.yml (or application.properties)
+    and use it as a string that gets returned (instead of "hello world")
+  - Use different port (instead of default port of 8080)
+    by setting "server.port" property
+  - Use customer banner: create one from patorjk.com by creating "banner.txt"
+    under /src/main/resources directory (google "spring boot banner patorjk")
+  - Create spring profile: "dev" and "production" from which different
+    message value can be extracted
+  - Create external property file(s) as opposed to the property files
+    inside the jar file
+  - Deploy the application to the cloud and run with dev profile
+  - Create manifest file using "create-app-manifest"
+  - Deploy the app using the newly created manifest file
+- Challenge questions
+  - What are three ways to config Spring bean? What are the use cases
+    for each scheme?
+  - What are the 4 major features Spring Boot provide?
 
 #### Spring Boot Internals
 
