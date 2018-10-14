@@ -5,18 +5,19 @@
 ## Push to the Cloud
 
 ### Known issues
-  - "python" app does not have correct dependency - you have to add the
-    "flask" to the "requirements.txt"
-  - "ruby" application needs to change the Ruby version in the Gemfile
-  - The URL of the "console" (App manager) should start with "console..." but
-    lab document (or email) says "login..."
+  - `python` app does not have correct dependency - you have to add the
+    `flask` to the `requirements.txt`
+  - `ruby` application needs to change the Ruby version in the `Gemfile`
+  - The URL of the `console` (App manager) should start with `console...` but
+    lab document (or email) says `login...`
 
 ### Challenge questions
   - Why, everytime you push an app, are the list of buildpacks downloaded again?
   - How many containers are needed for pushing an app?
   - Why do you see "container gets created and destroyed" as part of pushing app?
   - Can you find diagram that shows the sequence of internal operations
-    that occur when pushing an application? (Google "PCF how applications are staged".)
+    that occur when pushing an application? (Google "PCF how applications 
+    are staged".)
   - What is the "org"/"space" structure in your PCF installation?
   - Why do you have to use "--random-route"? What is the "cf push" option
     that lets you specify the hostname part of a route? ("cf push -h")
@@ -30,7 +31,7 @@
 ### Trouble-shooting
 
 - If you see the following error in the log, it means you will
-  need to bump up the memory for your app 
+  need to bump up the memory for your Java app to `768M`
   
   ```
      2018-10-14T10:08:27.14-0400 [APP/PROC/WEB/0] ERR Cannot calculate JVM memory configuration: There is insufficient memory remaining for heap. 
@@ -47,16 +48,16 @@
 ### Challenge questions on Logging
 
 - Where should your application write logs? Is it a good practice
-  write logs to a file?
+  write logs to a file? How does this change how you access logs 
+  today? At scale?
 - What are some of the different origin codes seen in the log?
   (Google "PCF log types"!)
-- Can you find "PCF architecture diagram"? (Google it!)
-- How does this change how you access logs today? At scale?
+- Can you find `PCF architecture diagram`? (Google it!)
+- What is the PCF component that handles logging? 
 
 ### Challenge questions on Scaling
 
 - What is the preferred, "scaling out" or "scaling up"?  Why?
-- What the origin code(s) that show "number of instances increase/decreased"?
 - When inceasing number of instances, do existing instances get restarted?
   How do you find that out? What about the case of decreasing number of
   instances?
@@ -70,7 +71,7 @@
 - How could you determine if your application has been crashing?
 - What are 4 HA features in PCF?
 
-### Lab extras (if you finish earlier than others)
+### Lab extras (for pushing Java app)
 
 -   Do `cf ssh articulate` and display the values of the
     environment variables using 
@@ -128,35 +129,53 @@
 
 ### Lab extras
 
-- Use `Papertrail` as a user provided service
+- Use `Papertrail` as a user provided service following 
+  the steps below
 
   - Sign up for an account at 
     [Papertrail](https://papertrailapp.com/)
-  - Follow the [instruction](http://help.papertrailapp.com/kb/hosting-services/cloud-foundry/)
+  - Follow the 
+    [instruction](http://help.papertrailapp.com/kb/hosting-services/cloud-foundry/)
+
+- Use `New Relic` as a user provided service following
+  the steps below
+  
+   - Go to [newrelic](https://newrelic.com/signup) and 
+     create a free trial account
+   - Once logged in, select `APM` and select `Java`
+   - Scroll down until you see “Get your license key”. 
+   - Click “Reveal your license key” and copy the value
+   - Create UPSI (User Provided Service Instance) 
+     using `-p licenseKey`
+   - Bind your application to the newly created UPSI
 
 ## Buildpacks
 
 ### Challenge questions
 
-- What are the buildpack scripts that get executed when creating a droplet?
+- What are the buildpack scripts that get executed when 
+  creating a droplet?
   (Google "pcf understanding buildpacks")
-- What is the buildpack script that gets omitted when you deploy a docker image?
-- What is the pros and cons of using buildpack (to create an container image)
-  as opposed to using docker image?
+- What is the buildpack script that gets omitted when 
+  you deploy a docker image?
+- What is the pros and cons of using buildpack (to create 
+  an container image) as opposed to using docker image?
   
 ### Lab extras
 
--   Do `cf ssh articulate` and see which command 
+-   [This is disabled in GAIA] Do `cf ssh articulate` 
+    and see which command 
     is executed by the `release` script.  
--   Do the same for `Node` and `Ruby` applications
+-   [This is disabled in GAIA] Do the same for `Node` 
+    and `Ruby` applications
 
 ## Blue-Green deployment
 
 ### Known issues
 
-  - Internet Exploder breaks on Blue Green - use Chrome
-  - lab document uses the term `subdomain`, 
-    which is actually `hostname`
+- Internet Exploder breaks on Blue Green - use Chrome
+- The lab document uses the term `subdomain`, 
+  which is actually `hostname`
 
 ### Challenge questions
 
@@ -183,14 +202,16 @@
 
   - Skip the first part of the lab 
     `Creating a Spring Web Application` given that this is just 
-    to show how much more work you have to do
-    Just do the second part of the lab 
-    `reating a Spring Boot Web Application`
+    to show how much more work you have to do if you are not using
+    Spring Boot - Just do the second part of the lab 
+    `Creating a Spring Boot Web Application`
   - Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
-    if you are creating a Spring Boot app from "start.spring.io".
-  - If you are creating an Spring Boot app from internal `go/moneta`,
+    if you are creating a Spring Boot app from `start.spring.io`.
+  - If you are creating an Spring Boot app from internal 
+    `go/moneta`,
     it is already using "Spring Boot 1.5.x"
-  - Make sure you are using Java 8
+  - Make sure you are using Java 8 - using Java 9 might result in
+    an error as described [here](https://blog.codefx.org/java/java-9-migration-guide/#Dependencies-On-Java-EE-Modules)
   - If you experience Maven build problem, make sure you set the
     correct Maven proxy in your `$HOME/.m2/settings.xml` file
     
@@ -463,11 +484,20 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 ### Development, Design, and Cloud Native Migration Strategies
 
+#### App continuum
+
 - [This site covers strategy of evolving applications from MVP (Minimum Viable Product, unstructured apps, through modularized monoliths, to distributed systems](http://www.appcontinuum.io/)
 - [A great Spring One 2017 Talk about practical use of SOLID principles](https://springoneplatform.io/sessions/solid-in-the-wild-life-when-your-software-is-actually-soft)
+
+#### 12 factor
+
 - [Original 12 Factors](https://12factor.net)
 - ["Beyond 12 Factors" (Pivotal evolution of original 12 Factors)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
 - [Breaking the Monolith](https://content.pivotal.io/slides/breaking-the-monolith)
+- [12 Factor presentation](https://content.pivotal.io/slides/the-12-factors-for-building-cloud-native-software)
+
+#### Monolith vs Microservices
+
 - [Monolith First](https://martinfowler.com/bliki/MonolithFirst.html)
 - [Microservices Prerequisites](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
 - [Low risk monolith to micro services by Christian Posta](http://blog.christianposta.com/microservices/low-risk-monolith-to-microservice-evolution/)
@@ -476,20 +506,20 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 
 ### Spring Boot Plugins (building and packaging Springboot Apps):
-- Gradle Springboot Plugin: https://docs.spring.io/spring-boot/docs/2.0.1.BUILD-SNAPSHOT/gradle-plugin/reference/html/
-- Maven Springboot Plugin: https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#build-tool-plugins-maven-plugin
-- Enterprise Application Patterns: https://martinfowler.com/eaaCatalog/index.html
-- Enterprise Integration Patterns: http://www.enterpriseintegrationpatterns.com/
+- [Gradle Springboot Plugin](https://docs.spring.io/spring-boot/docs/2.0.1.BUILD-SNAPSHOT/gradle-plugin/reference/html/)
+- [Maven Springboot Plugin](https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#build-tool-plugins-maven-plugin)
+- [Enterprise Application Patterns](https://martinfowler.com/eaaCatalog/index.html)
+- [Enterprise Integration Patterns](http://www.enterpriseintegrationpatterns.com/)
 
 ### Spring Cloud on .NET
 
-- Steeltoe (Spring Cloud Config Server and Spring Cloud Netflix on .NET): https://steeltoe.io/
+- [Steeltoe (Spring Cloud Config Server and Spring Cloud Netflix on .NET)](https://steeltoe.io/)
 
 ### Netflix OSS Docs
 
-- Ribbon Wiki: https://github.com/Netflix/Ribbon/wiki
-- Hystrix Wiki: https://github.com/Netflix/Hystrix/wiki
-- Hystrix Algorithm: https://github.com/Netflix/Hystrix/wiki/How-it-Works
+- [Ribbon Wiki](https://github.com/Netflix/Ribbon/wiki)
+- [Hystrix Wiki](https://github.com/Netflix/Hystrix/wiki)
+- [Hystrix Algorithm](https://github.com/Netflix/Hystrix/wiki/How-it-Works)
 - Hystrix Metrics and Monitoring: https://github.com/Netflix/Hystrix/wiki/Metrics-and-Monitoring
 - Performance Implications of using Hystrix: https://github.com/Netflix/Hystrix/wiki/FAQ%20:%20General#what-is-the-processing-overhead-of-using-hystrix
 - Hystrix Operations and Tuning Guide: https://github.com/Netflix/Hystrix/wiki/Operations
@@ -525,21 +555,21 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 ### Pivotal Cloud Foundry - Spring Cloud Services
 
-- Home: http://docs.pivotal.io/spring-cloud-services/1-4/common/index.html
-- Dependencies Matrix: http://docs.pivotal.io/spring-cloud-services/1-4/common/client-dependencies.html
-- Configuring Cross Cloud Foundry Service Registy (route mode): http://docs.pivotal.io/spring-cloud-services/1-4/common/service-registry/enabling-peer-replication.html
-- GoRouter does honor Ribbon load balancing algorithm: http://docs.pivotal.io/spring-cloud-services/1-4/common/service-registry/connectors.html#instance-specific-routing-in-ribbon
-- Configuring PCF Container-to-Container Networking, Service Registry and Client Load Balancing (SpringOne 2017): https://www.youtube.com/watch?v=1WJhFhBr-0Q
+- [Home](http://docs.pivotal.io/spring-cloud-services/1-4/common/index.html)
+- [Dependencies Matrix](http://docs.pivotal.io/spring-cloud-services/1-4/common/client-dependencies.html)
+- [Configuring Cross Cloud Foundry Service Registy (route mode)](http://docs.pivotal.io/spring-cloud-services/1-4/common/service-registry/enabling-peer-replication.html)
+- [GoRouter does honor Ribbon load balancing algorithm](http://docs.pivotal.io/spring-cloud-services/1-4/common/service-registry/connectors.html#instance-specific-routing-in-ribbon)
+- [Configuring PCF Container-to-Container Networking, Service Registry and Client Load Balancing (SpringOne 2017)](https://www.youtube.com/watch?v=1WJhFhBr-0Q)
 
 ### Pivotal Cloud Foundry - Security
 
-- PCF Security: https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa
+- [PCF Security](https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa)
 
 ### Blogs
 
-- General blog of Cloud Native, Spring Cloud subjects from a Spring Cloud thought leader: https://spencergibb.netlify.com/
-- Dipping into spring cloud topics from a Spring Cloud contributor: http://ryanjbaxter.com/
-- The Spring Cloud blog: https://spring.io/blog
+- [General blog of Cloud Native, Spring Cloud subjects from a Spring Cloud thought leader](https://spencergibb.netlify.com/)
+- [Dipping into spring cloud topics from a Spring Cloud contributor](http://ryanjbaxter.com/)
+- [The Spring Cloud blog](https://spring.io/blog)
 
 ### Spring Cloud Dataflow documentation (handling streaming and data centric applications using cloud native patterns and tooling)
 
@@ -566,6 +596,30 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 ### Books
 
-- Release It! 2nd Edition: https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software-ebook/dp/B079YWMY2V/ref=mt_kindle?_encoding=UTF8&me=&dpID=419zAwJJH4L&preST=_SX342_QL70_&dpSrc=detail
-- Continuous Integration: https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley-ebook/dp/B003YMNVC0/ref=mt_kindle?_encoding=UTF8&me=&dpID=51yF2SYUi7L&preST=_SY445_QL70_&dpSrc=detail
-- Building Evolutionary Architectures: https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant-ebook/dp/B075RR1XVG/ref=mt_kindle?_encoding=UTF8&me=&dpID=61kAEC%252BouJL&preST=_SY445_QL70_&dpSrc=detail
+- [Release It! 2nd Edition](https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software-ebook/dp/B079YWMY2V/ref=mt_kindle?_encoding=UTF8&me=&dpID=419zAwJJH4L&preST=_SX342_QL70_&dpSrc=detail)
+- [Continuous Integration](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley-ebook/dp/B003YMNVC0/ref=mt_kindle?_encoding=UTF8&me=&dpID=51yF2SYUi7L&preST=_SY445_QL70_&dpSrc=detail)
+- [Building Evolutionary Architectures](https://www.amazon.com/Building-Evolutionary-Architectures-Support-Constant-ebook/dp/B075RR1XVG/ref=mt_kindle?_encoding=UTF8&me=&dpID=61kAEC%252BouJL&preST=_SY445_QL70_&dpSrc=detail)
+
+# Before the Training
+
+- The following message will be sent out to all students at
+  the end of Day 1 before
+  `Spring Cloud Services` part gets started (typically on Day 2)
+
+```
+-If you have not set up "ssh" key with your BitBucket, 
+ please do so before we start the `Spring Cloud Services` lab
+ on Day 2.  (Bill and myself will be in the classroom around
+ 8:30AM so if you need help, please come earlier)
+
+-Please read the "Setup for BitBucket/GitHub" section under "Spring Cloud Services" of the reference document below
+
+ https://github.com/pivotal-bill-kable/cloud-native-course-errata/ blob/master/README.md
+
+-We might have "lunchtime tech-talk" on "OAuth2" between 12:30PM-1:00PM on Day 2 if there is enough interest.
+  The presentation slides are available from the following links
+
+  -https://www.slideshare.net/SangShin1/spring4-security-oauth2
+  -https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa (only slides 7-37)
+
+```
