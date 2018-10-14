@@ -381,6 +381,19 @@
 
 - Would you want to use Client load balancing for 
   public-facing applications?
+- How would "client-side load balancing" works under PCF given
+  that addresses of application instances are in the form of
+  a `route`?
+  
+### Labs extras
+
+- Locally, create another `fortune-service` running on a different
+  port and observe that `container-to-container networking` service
+  talks to the two `fortune-service` in round-robin fashion
+- Under PCF, enable `container-to-container networking` 
+ `greeting-ribbon-rest` and `fortune` service - and observe that
+  services are now registered with IP-address/Port combincation
+  in the service registry dashboard
 
 ## Circuit Breakers
 
