@@ -602,22 +602,90 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 # Before the Training
 
-- The following message will be sent out to all students at
+- The following message can be sent out to all students
+  a few days before the training:
+  
+```
+Folks,
+
+My name is Sang Shin. I will be the instructor of the 2-day
+"GAIA Cloud Native Application with Spring Cloud" training,
+which starts on Oct. 16th (Tuesday) at JPMC campus in Jersey City.
+
+A few items I would like to communicate before the training:
+
+- In addition to the official lab document you have received,
+  we are going to use the following supplemental document
+  (We will call it "supplemental document" from now on.)
+ 
+  https://github.com/pivotal-bill-kable/cloud-native-course-errata/blob/master/README.md
+  (Please bookmark this document along with the official one.)
+ 
+  This goal of this document is to supplement the official
+  training material in the following aspects.
+     
+  - Known issues (in the lab document and code)
+  - Read this (before you do the lab)
+  - Trouble-shooting tips
+  - Challenge questions
+  - Lab extras (in case you finish earlier than others)
+  - References
+
+  Please also note that I, as non-JPMC employee, don't have
+  access to the official lab document - I am using pseudo
+  lab document that is supposed to be close to what you
+  have.
+ 
+- Even though the prerequisites email says that you are
+  supposed to finish the following labs on your own, we
+  will go over these topics in the morning of Day 1.
+ 
+  1. Push to Cloud
+  2. Logging, Scale, HA
+  3. Services
+  4. Buildpacks
+  5. Blue-Green Deployments
+ 
+- If you bring your laptop, please make sure your laptop
+  is configured as following
+ 
+  - Being able to connect your GAIA API endpoint
+  - Being able to connect internal JPMC Maven repository: See
+    if you can build a simple Spring Boot app
+   
+I will be in the classroom from 8:15AM in case you need any
+help.
+
+If you have any questions/issues, please feel free to contact
+me (sashin@pivotal.io) before/during/after the training.
+
+Looking forward to seeing you all.
+
+-Sang Shin
+```
+
+- The following message can be sent out to all students at
   the end of Day 1 before
-  `Spring Cloud Services` part gets started (typically on Day 2)
+  `Spring Cloud Services` part gets started on Day 2
 
 ```
--If you have not set up "ssh" key with your BitBucket, 
- please do so before we start the `Spring Cloud Services` lab
- on Day 2.  (Bill and myself will be in the classroom around
- 8:30AM so if you need help, please come earlier)
+-Setting up "ssh" key with your BitBucket
 
--Please read the "Setup for BitBucket/GitHub" section under "Spring Cloud Services" of the reference document below
+ If you have not set up "ssh" key with your BitBucket, 
+ please do so before we start the `Spring Cloud Services` lab
+ on Day 2.  (Instructors will be in the classroom around
+ 8:30AM in case you need help.)
+
+ Please read the "Setup for BitBucket/GitHub" section under  
+ "Spring Cloud Services" of the reference document below
 
  https://github.com/pivotal-bill-kable/cloud-native-course-errata/ blob/master/README.md
 
--We might have "lunchtime tech-talk" on "OAuth2" between 12:30PM-1:00PM on Day 2 if there is enough interest.
-  The presentation slides are available from the following links
+-Lunchtime tech-talk
+
+We might have "lunchtime tech-talk" on "OAuth2" between  
+12:30PM-1:00PM on Day 2 if there is enough interest.
+The presentation slides are available from the following links
 
   -https://www.slideshare.net/SangShin1/spring4-security-oauth2
   -https://www.slideshare.net/WillTran1/enabling-cloud-native-security-with-oauth2-and-multitenant-uaa (only slides 7-37)
