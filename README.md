@@ -34,8 +34,8 @@
   need to bump up the memory for your Java app to `768M`
   
   ```
-     2018-10-14T10:08:27.14-0400 [APP/PROC/WEB/0] ERR Cannot calculate JVM memory configuration: There is insufficient memory remaining for heap. 
-     Memory available for allocation 512M is less than allocated memory 623337K (-XX:ReservedCodeCacheSize=240M, -XX:MaxDirectMemorySize=10M, -XX:MaxMetaspaceSize=111337K, -Xss1M * 250 threads)
+  2018-10-14T10:08:27.14-0400 [APP/PROC/WEB/0] ERR Cannot calculate JVM memory configuration: There is insufficient memory remaining for heap. 
+  Memory available for allocation 512M is less than allocated memory 623337K (-XX:ReservedCodeCacheSize=240M, -XX:MaxDirectMemorySize=10M, -XX:MaxMetaspaceSize=111337K, -Xss1M * 250 threads)
   ``` 
 
 ### Challenge questions on pushing Java app
