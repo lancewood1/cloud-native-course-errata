@@ -430,9 +430,9 @@
 
 ## Pivotal Cloud Foundry References
 
-- Pivotal Cloud Foundry Architecture: https://docs.pivotal.io/pivotalcf/2-1/concepts/diego/diego-architecture.html
-- Cloud Foundry Services: https://docs.cloudfoundry.org/services/overview.html
-- Healthchecks: https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html
+- [Pivotal Cloud Foundry Architecture](https://docs.pivotal.io/pivotalcf/2-1/concepts/diego/diego-architecture.html)
+- [Cloud Foundry Services](https://docs.cloudfoundry.org/services/overview.html)
+- [Healthchecks](https://docs.cloudfoundry.org/devguide/deploy-apps/healthchecks.html)
 
 ## Spring Cloud - Cloud Native References
 
@@ -441,38 +441,38 @@ and Cloud Native Developer courses:
 
 ### Some good overview Pluralsight courses
 
-- Cloud Foundry for Developers: https://app.pluralsight.com/library/courses/cloud-foundry-developers/table-of-contents
-- Pivotal Cloud Foundry for Developers: https://app.pluralsight.com/library/courses/cloud-foundry-developer-1dot7-pivotal/table-of-contents
-- Java Microservices with Spring Cloud: Coordinating Services: https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-coordinating-services/table-of-contents
-- Java Microservices with Spring Cloud: Developing Services: https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-developing-services/table-of-contents
-- Git Intro: https://app.pluralsight.com/library/courses/how-git-works/table-of-contents
-- Git Advanced: https://app.pluralsight.com/library/courses/mastering-git/table-of-contents
+- [Cloud Foundry for Developers](https://app.pluralsight.com/library/courses/cloud-foundry-developers/table-of-contents)
+- [Pivotal Cloud Foundry for Developers](https://app.pluralsight.com/library/courses/cloud-foundry-developer-1dot7-pivotal/table-of-contents)
+- [Java Microservices with Spring Cloud: Coordinating Services:](https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-coordinating-services/table-of-contents)
+- [Java Microservices with Spring Cloud: Developing Services](https://app.pluralsight.com/library/courses/java-microservices-spring-cloud-developing-services/table-of-contents)
+- [Git Intro](https://app.pluralsight.com/library/courses/how-git-works/table-of-contents)
+- [Git Advanced](https://app.pluralsight.com/library/courses/mastering-git/table-of-contents)
 
 ### App Performance Test Tools
 
 Following are useful open tools in order of simplicity vs. flexibility
 
-- Siege: https://github.com/JoeDog/siege
+- [Siege](https://github.com/JoeDog/siege)
 - Apache Benchmark (AB)
-	- https://httpd.apache.org/docs/2.4/programs/ab.html
-	- https://www.tutorialspoint.com/apache_bench/index.htm
-	- https://qafoo.com/blog/109_why_apache_benchmark_is_not_enough.html
-- Apache Jmeter: https://jmeter.apache.org/
-- Blazemeter: https://www.blazemeter.com/
-- Gatling: https://gatling.io/
+	- [website](https://httpd.apache.org/docs/2.4/programs/ab.html)
+	- [tutorial](https://www.tutorialspoint.com/apache_bench/index.htm)
+	- [blogs](https://qafoo.com/blog/109_why_apache_benchmark_is_not_enough.html)
+- [Apache Jmeter](https://jmeter.apache.org/)
+- [Blazemeter](https://www.blazemeter.com/)
+- [Gatling](https://gatling.io/)
 
 ### Development, Design, and Cloud Native Migration Strategies
 
-- This site covers strategy of evolving applications from MVP (Minimum Viable Product, unstructured apps, through modularized monoliths, to distributed systems: http://www.appcontinuum.io/
-- A great Spring One 2017 Talk about practical use of SOLID principles: https://springoneplatform.io/sessions/solid-in-the-wild-life-when-your-software-is-actually-soft
-- Original 12 Factors: https://12factor.net
-- "Beyond 12 Factors" (Pivotal evolution of original 12 Factors): https://content.pivotal.io/blog/beyond-the-twelve-factor-app
-- "Breaking the Monolith": https://content.pivotal.io/slides/breaking-the-monolith
-- "Monolith First": https://martinfowler.com/bliki/MonolithFirst.html
-- "Microservices Prerequisites": https://martinfowler.com/bliki/MicroservicePrerequisites.html
-- "Low risk monolith to micro services" Christian Posta: http://blog.christianposta.com/microservices/low-risk-monolith-to-microservice-evolution/
-- "Application Strangulation": https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/
-- "Online migration at scale blog": https://stripe.com/blog/online-migrations
+- [This site covers strategy of evolving applications from MVP (Minimum Viable Product, unstructured apps, through modularized monoliths, to distributed systems](http://www.appcontinuum.io/)
+- [A great Spring One 2017 Talk about practical use of SOLID principles](https://springoneplatform.io/sessions/solid-in-the-wild-life-when-your-software-is-actually-soft)
+- [Original 12 Factors](https://12factor.net)
+- ["Beyond 12 Factors" (Pivotal evolution of original 12 Factors)](https://content.pivotal.io/blog/beyond-the-twelve-factor-app)
+- [Breaking the Monolith](https://content.pivotal.io/slides/breaking-the-monolith)
+- [Monolith First](https://martinfowler.com/bliki/MonolithFirst.html)
+- [Microservices Prerequisites](https://martinfowler.com/bliki/MicroservicePrerequisites.html)
+- [Low risk monolith to micro services by Christian Posta](http://blog.christianposta.com/microservices/low-risk-monolith-to-microservice-evolution/)
+- [Application Strangulation](https://paulhammant.com/2013/07/14/legacy-application-strangulation-case-studies/)
+- [Online migration at scale blog](https://stripe.com/blog/online-migrations)
 
 
 ### Spring Boot Plugins (building and packaging Springboot Apps):
@@ -498,8 +498,8 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 ### Spring Cloud Netflix - Eureka, Ribbon, Hystrix
 
-- Project Home: https://cloud.spring.io/spring-cloud-netflix/
-- Product Documentation: http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.4.3.RELEASE/single/spring-cloud-netflix.html
+- [Project Home](https://cloud.spring.io/spring-cloud-netflix/)
+- [Product Documentation](http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/1.4.3.RELEASE/single/spring-cloud-netflix.html)
 
 ### Spring Cloud Config
 
@@ -511,13 +511,13 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 ### Spring Cloud Bus
 
-- Home: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html
-- Targeting application for config bus refresh: http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html#_addressing_all_instances_of_a_service
+- [Home](http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html)
+- [Targeting application for config bus refresh](http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/1.3.3.RELEASE/single/spring-cloud-bus.html#_addressing_all_instances_of_a_service)
 
 ### Spring Cloud Commons - Useful for seeing what's under the hood
 
-- Project Home: https://cloud.spring.io/spring-cloud-commons/
-- Projection Documention: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html
+- [Project Home](https://cloud.spring.io/spring-cloud-commons/)
+- [Projection Documention](http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html)
 - Ribbon Retry Policy: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#_retrying_failed_requests
 - Service Registry - Ignoring Network Interfaces: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#ignore-network-interfaces
 - Configuring Http Clients: http://cloud.spring.io/spring-cloud-static/spring-cloud-commons/1.3.2.RELEASE/single/spring-cloud-commons.html#http-clients
@@ -550,7 +550,7 @@ Following are useful open tools in order of simplicity vs. flexibility
 - Project Home for Dataflow on PCF: https://cloud.spring.io/spring-cloud-dataflow-server-cloudfoundry/
 - Project Reference for Dataflow on PCF: https://docs.spring.io/spring-cloud-dataflow-server-cloudfoundry/docs/current-SNAPSHOT/reference/htmlsingle/
 
-#### Spring Cloud Supplement
+### Spring Cloud Supplement
 
 - [Service Registry Pattern](./supplement/ServiceRegistry.pdf)
 - [Service Discovery with Netflix Eureka](./supplement/ServiceDiscoverywithNetflixEureka.pdf)
@@ -560,11 +560,11 @@ Following are useful open tools in order of simplicity vs. flexibility
 - [Hystrix Load Shedding](./supplement/HystrixLoadShedding.pdf)
 - [Hystrix Isolation Strategy](./supplement/HystrixIsolationStrategy.pdf)
 
-#### Spring Cloud App Code
+### Spring Cloud App Code
 
 - [Legacy lab code repo](https://github.com/pivotal-education/apps-spring-cloud-services-labs)
 
-#### Books
+### Books
 
 - Release It! 2nd Edition: https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software-ebook/dp/B079YWMY2V/ref=mt_kindle?_encoding=UTF8&me=&dpID=419zAwJJH4L&preST=_SX342_QL70_&dpSrc=detail
 - Continuous Integration: https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley-ebook/dp/B003YMNVC0/ref=mt_kindle?_encoding=UTF8&me=&dpID=51yF2SYUi7L&preST=_SY445_QL70_&dpSrc=detail
