@@ -1,4 +1,4 @@
-# Cloud Native References and Errata
+# [Cloud Native References and Errata]
 
 # Introduction to The Cloud
 
