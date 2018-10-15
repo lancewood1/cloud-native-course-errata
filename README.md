@@ -178,7 +178,7 @@
 
 ### Known issues
 
-- Internet Exploder breaks on Blue Green - use Chrome
+- Internet Explorer breaks on Blue Green - use Chrome
 - The lab document uses the term `subdomain`, 
   which is actually `hostname`
 
@@ -257,8 +257,12 @@
 
 ## Spring Boot Internals
 
+### Challenge questions
+
 - Which auto-configuration is used for auto-configuring 
   data source object?
+- What file tells Spring Boot which configuration 
+  to load?
 
 ## Data Access
 
