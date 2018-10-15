@@ -322,39 +322,42 @@
 
 ## Setup for Bitbucket/GitHub
 
-- You will authenticate with Bitbucket/GitHub using `ssh` key.
-  - Follow
+You will authenticate with Bitbucket/GitHub using `ssh` key.
+
+-   Follow
   [the instruction](https://help.github.com/articles/connecting-to-github-with-ssh/) 
-  to create an ssh key pair and add the public key to 
-  your GitHub account.
-  - When you create `ssh` key, do not add a `passphrase` 
+    to create an ssh key pair and add the public key to 
+    your GitHub account.
+-   When you create `ssh` key, do not add a `passphrase` 
     to this key when you are 
     creating ssh key, as it might make things difficult 
     for some of the labs.
-  
-- The `sping cloud services labs` projects can be cloned 
-  in the following 3 ways: use one that works for you.
+-   The `sping cloud services labs` projects can be cloned 
+    in the following 3 ways: use one that works for you.
 
-   - Option #1: choose this if you set up your ssh key
-     (This is the way official lab document suggests)
+    -   Option #1: choose this if you set up your ssh key
+        (This is the way official lab document suggests)
+        
 
-       ```
-       git clone ssh://git@bitbucketdc-ssh.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs 
-       ```
-   
- 	- option #2: choose this if you're having a problem 
- 	  using option #1
+        ```
+        git clone ssh://git@bitbucketdc-ssh.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs 
+        ```
+        
+   -   Option #2: choose this if you're having a problem 
+ 	     using option #1
 
- 	    ```
- 	    git clone https://<sid>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
- 	    ``` 
+
+ 	     ```
+ 	     git clone https://<sid>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
+ 	     ``` 
  	
- 	- Option #3: choose this if you're having a problem 
- 	  using #1 and #2 above
+  -   Option #3: choose this if you're having a problem 
+ 	     using #1 and #2 above
+ 	     
 
- 	    ```
- 	    git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs 
- 	    ```
+ 	     ```
+ 	     git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs 
+ 	     ```
 
 
 ## Config Server
