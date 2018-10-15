@@ -136,6 +136,15 @@
     cf install-plugin -r CF-Community "open"
     ```
 
+### Lab Extras (for Scaling)
+
+-   Try auto-scaling available in the App Manager as following
+
+    - Start with 3 instances of `articulate`
+    - Use `CPU utlization` so that it scales down to 1 when
+      it is less than 50%
+    - Observe that the number of instances scales down to 1
+
 ## Services
 
 ### Challenge questions
