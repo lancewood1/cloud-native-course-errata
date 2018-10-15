@@ -118,8 +118,7 @@
       - route: spring-music-unemigrant-nontransportation.cfapps.io
     ```
     
--   Push docker image `tutum/hello-world` (Figure out what
-    option you have to use)
+-   Push docker image `tutum/hello-world` (Try `cf push -a | grep docker`)
     
 -   [This is disabled in GAIA] Do `cf ssh articulate` 
     and display the values of the
@@ -434,7 +433,9 @@
     - Otherwise, return `UP` status.
       
   - Add build information as described 
-    [here](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html)
+    [here](https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/build-info.html)
+    
+  - Deploy the application to the PCF
 
 ### Challenge questions
 
