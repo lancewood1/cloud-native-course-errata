@@ -640,9 +640,9 @@ Following are useful open tools in order of simplicity vs. flexibility
 ```
 Folks,
 
-My name is Sang Shin. I will be the instructor of the 2-day
+My name is <Instructor-Name>. I will be the instructor of the 2-day
 "GAIA Cloud Native Application with Spring Cloud" training,
-which starts on Oct. 16th (Tuesday) at JPMC campus in Jersey City.
+which starts on <Date> at JPMC campus in <City>.
 
 A few items I would like to communicate before the training:
 
@@ -693,7 +693,7 @@ me (sashin@pivotal.io) before/during/after the training.
 
 Looking forward to seeing you all.
 
--Sang Shin
+-<Instructor Name>
 ```
 
 - The following message can be sent out to students at
