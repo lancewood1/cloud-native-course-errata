@@ -235,12 +235,12 @@
     
     ```
     -----> Downloading Jvmkill Agent 1.16.0_RELEASE from https://java-buildpack.cloudfoundry.org/jvmkill/trusty/x86_64/jvmkill-1.16.0_RELEASE.so (found in cache)
-   ERROR Finalize failed with exception #<RuntimeError: Unable to find cached file for https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_45.tar.gz>
-   Unable to find cached file for https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_45.tar.gz
-   Failed to compile droplet: Failed to run finalize script: exit status 1
+    ERROR Finalize failed with exception #<RuntimeError: Unable to find cached file for https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_45.tar.gz>
+    Unable to find cached file for https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_45.tar.gz
+    Failed to compile droplet: Failed to run finalize script: exit status 1
     ```
     
-    You can try online `java_buildpack`.
+    You can try online version of `java_buildpack` as shown below.
     
         
     ```
