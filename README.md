@@ -27,6 +27,7 @@
     cf orgs
     cf spaces
     cf env <app-name>
+    cf delete-orphaned-routes
     ```
     
 ### Challenge questions
@@ -229,7 +230,8 @@
 ### Trouble-shooting
 
 -   If you experience the following error, it is because your PCF installation
-    does not have the version you specified.  
+    does not have the version you specified. 
+     
     
     ```
     -----> Downloading Jvmkill Agent 1.16.0_RELEASE from https://java-buildpack.cloudfoundry.org/jvmkill/trusty/x86_64/jvmkill-1.16.0_RELEASE.so (found in cache)
@@ -239,6 +241,7 @@
     ```
     
     You can try online `java_buildpack`.
+    
         
     ```
     cf push articulate -p articulate-0.0.1-SNAPSHOT.jar -b https://github.com/cloudfoundry/java-buildpack
@@ -268,7 +271,17 @@
 
 - Internet Explorer breaks on Blue Green - use Chrome
 - The lab document uses the term `subdomain`, 
-  which is actually `hostname`
+  which is actually `hostname`, which can be specified
+  by either `--hostname` or `-n`
+  
+### Steps of Blue-Green Deployment
+
+1.  V1 - R1 is currently running
+1.  Create V2 with R2 and make sure it is working
+1.  Add R1 to V2 - now V2 handles both R1 and R2
+1.  Remove R1 from V1 - now V2 handles 100% of R1
+1.  Remove R2 from V2 - now V2 handles only R1
+1.  Rename V2 to V1
 
 ### Challenge questions
 
