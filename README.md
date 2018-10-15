@@ -144,8 +144,49 @@
     - Use `CPU utlization` so that it scales down to 1 when
       it is less than 50%
     - Observe that the number of instances scales down to 1
+    - You will also receive email notifications everytime
+      scaling up and down event occurs
+    - Turn off the auto-scaling
 
 ## Services
+
+### Trouble-shooting tips
+
+-   In order to verify that `attendee-service` is bound to 
+    `attendee-mysql-sid`, you can also add a new `attendee` using 
+    curl/HTTPie/PostMan
+    
+    ```
+    curl -i -XPOST -H"Content-Type: application/json" attendee-service-aeromedical-bobsled.cfapps.io/attendees -d'{"firstName": "Pete", "lastName": "Jones", "emailAddress": "man@man.com"}' 
+    curl attendee-service-aeromedical-bobsled.cfapps.io/attendees
+    ```
+    
+    ```
+    http post attendee-service-aeromedical-bobsled.cfapps.io/attendees firstName=sang1 lastName=shin2 emailAddress=yo@yo.com
+    http attendee-service-aeromedical-bobsled.cfapps.io/attendees
+    ```
+    
+-   If you experience the following error when performing 
+    `cf bind-service articulate attendee-service-upsi`, it is because
+    the `attendee-service-upsi` is created with incorrect `url` value
+    
+    ```
+    2018-10-15T09:44:55.50-0400 [APP/PROC/WEB/0] ERR Caused by: java.lang.RuntimeException: 
+    The attendee-service uri must have '/attendees' in the path.  For example: http://localhost:8181/attendees
+    ```
+    
+-   If you experience the following error when you try 
+    `cf delete-service attendee-service-upsi`, it is because it
+    is still bound to `articulate` application. Unbind the service
+    first before deleting.
+
+    ```
+    < gaia/attendee-service > cf delete-service attendee-service-upsi
+    Really delete the service attendee-service-upsi?> yes
+    Deleting service attendee-service-upsi in org sashin-org / space jpmc as ..
+    FAILED
+    Cannot delete service instance, service keys and bindings must first be deleted
+    ```
 
 ### Challenge questions
 
@@ -184,6 +225,24 @@
     -    Bind your application to the newly created UPSI
 
 ## Buildpacks
+
+### Trouble-shooting
+
+-   If you experience the following error, it is because your PCF installation
+    does not have the version you specified.  
+    
+    ```
+    -----> Downloading Jvmkill Agent 1.16.0_RELEASE from https://java-buildpack.cloudfoundry.org/jvmkill/trusty/x86_64/jvmkill-1.16.0_RELEASE.so (found in cache)
+   [Buildpack]                      ERROR Finalize failed with exception #<RuntimeError: Unable to find cached file for https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_45.tar.gz>
+   Unable to find cached file for https://java-buildpack.cloudfoundry.org/openjdk/trusty/x86_64/openjdk-1.8.0_45.tar.gz
+   Failed to compile droplet: Failed to run finalize script: exit status 1
+    ```
+    
+    You can try online `java_buildpack`.
+        
+    ```
+    cf push articulate -p articulate-0.0.1-SNAPSHOT.jar -b https://github.com/cloudfoundry/java-buildpack
+    ```
 
 ### Challenge questions
 
