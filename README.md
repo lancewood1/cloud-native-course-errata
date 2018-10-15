@@ -157,13 +157,13 @@
     curl/HTTPie/PostMan
     
     ```
-    curl -i -XPOST -H"Content-Type: application/json" attendee-service-aeromedical-bobsled.cfapps.io/attendees -d'{"firstName": "Pete", "lastName": "Jones", "emailAddress": "man@man.com"}' 
-    curl attendee-service-aeromedical-bobsled.cfapps.io/attendees
+    curl -i -XPOST -H"Content-Type: application/json" attendee-service-sid.cfapps.io/attendees -d'{"firstName": "Pete", "lastName": "Jones", "emailAddress": "man@man.com"}' 
+    curl attendee-service-sid.cfapps.io/attendees
     ```
     
     ```
-    http post attendee-service-aeromedical-bobsled.cfapps.io/attendees firstName=sang1 lastName=shin2 emailAddress=yo@yo.com
-    http attendee-service-aeromedical-bobsled.cfapps.io/attendees
+    http post attendee-service-sid.cfapps.io/attendees firstName=sang1 lastName=shin2 emailAddress=yo@yo.com
+    http attendee-service-sid.cfapps.io/attendees
     ```
     
 -   If you experience the following error when performing 
