@@ -5,26 +5,37 @@
 ## Push to the Cloud
 
 ### Known issues
+
   - `python` app does not have correct dependency - you have to add the
     `flask` to the `requirements.txt`
-  - `ruby` application needs to change the Ruby version in the `Gemfile`
+  - `ruby` application needs to change the Ruby version in the `Gemfile`. 
+    
+    ```
+    ruby '>2.1.8'
+    ```
+    
   - The URL of the `console` (App manager) should start with `console...` but
     lab document (or email) says `login...`
+    
+### Lab extras
 
+-   Try the following commands
+
+    ```
+    cf help -a
+    cf push -h
+    cf orgs
+    cf spaces
+    cf env <app-name>
+    ```
+    
 ### Challenge questions
-  - Why, everytime you push an app, are the list of buildpacks downloaded again?
-  - How many containers are needed for pushing an app?
-  - Why do you see "container gets created and destroyed" as part of pushing app?
-  - Can you find diagram that shows the sequence of internal operations
-    that occur when pushing an application? (Google "PCF how applications 
-    are staged".)
-  - What is the "org"/"space" structure in your PCF installation?
-  - Why do you have to use "--random-route"? What is the "cf push" option
-    that lets you specify the hostname part of a route? ("cf push -h")
-  - Suppose you deployed an application with "cf push <app-name> -m 768M",
-    what would be memory allocated when you re-deployed the same application
-   with "cf push <app-name>"?
 
+- What is the "org"/"space" structure in your PCF installation?
+- Why do you have to use "--random-route"? What is the "cf push" option
+  that lets you specify the hostname part of a route? ("cf push -h")
+- What are the environment variables that are automatically set
+  by PCF? (Google `Cloud Foundry Environment Variables`)
 
 ## Logging, Scale, HA
 
@@ -40,17 +51,26 @@
 
 ### Challenge questions on pushing Java app
 
-- What are the environment variables that are automatically set
-  by PCF? (Google `Cloud Foundry Environment Variables`)
+- Why, everytime you push an app, are the list of buildpacks downloaded again?
+- How many containers are needed for pushing an app?
+- Why do you see "container gets created and destroyed" as part of pushing app?
+- Can you find diagram that shows the sequence of internal operations
+    that occur when pushing an application? (Google "PCF how applications 
+    are staged".)
+- Suppose you deployed an application with "cf push <app-name> -m 768M",
+    what would be memory allocated when you re-deployed the same application
+    with "cf push <app-name>"?
 - What is the auto-configuration is being performed when
   you push an application?  See [here](https://github.com/cloudfoundry/java-buildpack-auto-reconfiguration) for an anwser.
 
 ### Challenge questions on Logging
 
+- What is the difference between `cf logs articulate` vs 
+  `cf logs articulate --recent`?
 - Where should your application write logs? Is it a good practice
   write logs to a file? How does this change how you access logs 
   today? At scale?
-- What are some of the different origin codes seen in the log?
+- What are some of the different origin codes (log types) seen in the log?
   (Google "PCF log types"!)
 - Can you find `PCF architecture diagram`? (Google it!)
 - What is the PCF component that handles logging? 
