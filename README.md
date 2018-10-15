@@ -343,7 +343,7 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
         git clone ssh://git@bitbucketdc-ssh.jpmchase.net:7999/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs 
         ```
         
-   -   Option #2: choose this if you're having a problem 
+    -   Option #2: choose this if you're having a problem 
  	     using option #1
 
 
@@ -351,7 +351,7 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
  	     git clone https://<sid>@bitbucketdc.jpmchase.net/scm/cloudtraining/apps-spring-cloud-services-labs.git spring-cloud-services-labs
  	     ``` 
  	
-  -   Option #3: choose this if you're having a problem 
+    -   Option #3: choose this if you're having a problem 
  	     using #1 and #2 above
  	     
 
