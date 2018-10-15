@@ -134,25 +134,25 @@
 
 ### Lab extras
 
-- Use `Papertrail` as a user provided service following 
-  the steps below
+-   Use `Papertrail` as a user provided service following 
+    the steps below
 
-  - Sign up for an account at 
+    -   Sign up for an account at 
     [Papertrail](https://papertrailapp.com/)
-  - Follow the 
+    -   Follow the 
     [instruction](http://help.papertrailapp.com/kb/hosting-services/cloud-foundry/)
 
-- Use `New Relic` as a user provided service following
-  the steps below
+-   Use `New Relic` as a user provided service following
+    the steps below
   
-   - Go to [newrelic](https://newrelic.com/signup) and 
-     create a free trial account
-   - Once logged in, select `APM` and select `Java`
-   - Scroll down until you see “Get your license key”. 
-   - Click “Reveal your license key” and copy the value
-   - Create UPSI (User Provided Service Instance) 
-     using `-p licenseKey`
-   - Bind your application to the newly created UPSI
+    -    Go to [newrelic](https://newrelic.com/signup) and 
+         create a free trial account
+    -    Once logged in, select `APM` and select `Java`
+    -    Scroll down until you see “Get your license key”. 
+    -    Click “Reveal your license key” and copy the value
+    -    Create UPSI (User Provided Service Instance) 
+         using `-p licenseKey`
+    -    Bind your application to the newly created UPSI
 
 ## Buildpacks
 
@@ -405,7 +405,6 @@
   
 - If you are using IntelliJ Ultimate Edition or STS, 
   please feel free to use `Spring Boot Dashboard`
-  
 - If you are using `Windows`, please feel free to use
   [ConEMU shell](https://conemu.github.io/) 
 
@@ -632,7 +631,7 @@ Following are useful open tools in order of simplicity vs. flexibility
 
 # Before the Training
 
-- The following message can be sent out to all students
+- The following message can be sent out to students
   a few days before the training:
   
 ```
@@ -661,7 +660,7 @@ A few items I would like to communicate before the training:
   - Lab extras (in case you finish earlier than others)
   - References
 
-  Please also note that I, as non-JPMC employee, don't have
+  Please also note that I, as non-JPMC employee, do not have
   access to the official lab document - I am using pseudo
   lab document that is supposed to be close to what you
   have.
@@ -694,7 +693,7 @@ Looking forward to seeing you all.
 -Sang Shin
 ```
 
-- The following message can be sent out to all students at
+- The following message can be sent out to students at
   the end of Day 1 before
   `Spring Cloud Services` part gets started on Day 2
 
