@@ -287,7 +287,7 @@
 ### Before you do the lab
 
   - When creating Spring Boot project 
-    from [Spring Initialer](https://start.spring.io/),
+    from [Spring Initializr](https://start.spring.io/),
     make sure you choose Spring Boot 1.5.x (not Spring Boot 2.0.x
     (This is because the lab document, especially on Actuator
     part, assumes you are using
