@@ -309,18 +309,19 @@
 
 ### Before you do the lab
 
-  - Skip the first part of the lab 
-    `Creating a Spring Web Application` given that this is just 
+  - **Skip the first part of the lab 
+    `Creating a Spring Web Application`** given that this is just 
     to show how much more work you have to do if you are not using
     Spring Boot - Just do the second part of the lab 
     `Creating a Spring Boot Web Application`
-  - Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")
+  - **Make sure to select "Spring Boot 1.5.x" (not "Spring Boot 2.0.x")**
     if you are creating a Spring Boot app from `start.spring.io`.
   - If you are creating an Spring Boot app from internal 
     `go/moneta`,
     it is already using "Spring Boot 1.5.x"
   - Make sure you are using Java 8 - using Java 9 might result in
     an error as described [here](https://blog.codefx.org/java/java-9-migration-guide/#Dependencies-On-Java-EE-Modules)
+  - Feel free to create the project within the IDE (IntelliJ or STS)
   - If you experience Maven build problem, make sure you set the
     correct Maven proxy in your `$HOME/.m2/settings.xml` file
     
@@ -331,23 +332,46 @@
     
 ### Lab extras
 
+#### Use properties
+
   - Add `message` property to `application.yml` (or `application.properties`)
     and use it as a string that gets returned (instead of "Hello world")
   - Use different port (instead of default port of 8080)
     by setting `server.port` property
   - Use customer banner: create one from 
     [patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20) 
-    by creating "banner.txt"
-    under /src/main/resources directory 
+    by creating `banner.txt`
+    under `/src/main/resources` directory 
+   
+#### Use profiles
+
+  - Review [Spring Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html)
   - Create spring profile: `dev` and `production` 
     from which different
     message value can be extracted
+  - Run the application with `SPRING_PROFILES_ACTIVE` 
+    environment variable set to either `dev` or `production`
   - Create external property file(s) as opposed 
     to the property files
     inside the jar file
-  - Deploy the application to the cloud and run with dev profile
-  - Create manifest file using "create-app-manifest"
-  - Deploy the app using the newly created manifest file
+  - Set the `message` property as environment variable 
+    and run the application
+    
+#### Write integration test code
+
+  - In general, you should write test code first in the
+    sprit of TDD.  But later is better than none. 
+    (See [example code](https://github.com/sashinpivotal/spring-boot-tdd) as a reference) 
+    
+#### Deploying it to PCF
+
+  - Deploy the application to the cloud and run with `dev` profile
+    setting `SPRING_PROLFILES_ACTIVE` environment variable 
+    to `dev`
+  - Create manifest file using `cf create-app-manifest` command
+  - Deploy the app using the newly created manifest file - note
+    that manifest file that gets created does not have `path`
+    attribute
 
 ### Challenge questions
 
@@ -389,11 +413,13 @@
 
   - When creating Spring Boot project 
     from [Spring Initializr](https://start.spring.io/),
-    make sure you choose Spring Boot 1.5.x (not Spring Boot 2.0.x
-    (This is because the lab document, especially on Actuator
-    part, assumes you are using
-    Spring Boot 1.5.x)
-  - Skip the `Challenges` part of the lab in the middle of
+    make sure you choose Spring Boot 1.5.x (not Spring Boot 2.0.x)
+    given that the document is written with Spring Boot 1.5.x 
+    in mind
+  - Feel free to use the Spring Boot project that was created
+    in the previous lab - just add `spring-boot-starter-actuator`
+    dependency
+  - **Skip the `Challenges` part of the lab** in the middle of
     the document
   - Lab document assumes you are using Gradle. If you are 
     using Maven, just add Maven dependency.
