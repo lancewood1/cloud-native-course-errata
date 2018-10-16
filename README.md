@@ -27,13 +27,16 @@
     cf orgs
     cf spaces
     cf env <app-name>
+    cf domains
     cf delete-orphaned-routes
     ```
     
 ### Challenge questions
 
 - What is the "org"/"space" structure in your PCF installation?
-- Why do you have to use "--random-route"? What is the "cf push" option
+- What makes up a route? 
+- Why do you have to use "--random-route"? 
+- What is the "cf push" option
   that lets you specify the hostname part of a route? ("cf push -h")
 - What are the environment variables that are automatically set
   by PCF? (Google `Cloud Foundry Environment Variables`)
@@ -168,7 +171,8 @@
     
 -   If you experience the following error when performing 
     `cf bind-service articulate attendee-service-upsi`, it is because
-    the `attendee-service-upsi` is created with incorrect `url` value
+    the `attendee-service-upsi` is created with incorrect 
+    `url` value, possibly without `attendees` at the end.
     
     ```
     2018-10-15T09:44:55.50-0400 [APP/PROC/WEB/0] ERR Caused by: java.lang.RuntimeException: 
@@ -178,7 +182,7 @@
 -   If you experience the following error when you try 
     `cf delete-service attendee-service-upsi`, it is because it
     is still bound to `articulate` application. Unbind the service
-    first before deleting.
+    first from the application before deleting.
 
     ```
     < gaia/attendee-service > cf delete-service attendee-service-upsi
@@ -229,7 +233,7 @@
 ### Trouble-shooting
 
 -   If you experience the following error, it is because your PCF installation
-    does not have the version you specified. 
+    does not have the version you specified in offline mode. 
      
     
     ```
@@ -540,10 +544,6 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
   ```
   quoteServiceURL: http://quote-server-sang-shin-dev.cfapps.io/quote
   ```
-  
-- Creating a service instance of `p-config-server` takes a few
-  minutes.  You might want to create one before you finish
-  the rest of the lab.
  
 ### Tool Recommendations 
   
@@ -567,6 +567,14 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
   server is not available during start up.
 - Configure your application to use a retry/backoff 
   policy on a config server fail-fast.
+  
+## Service Disovery
+
+### Before you get started
+
+- Creating service instance of `p-service-registry` in PCF
+  could take a few minutes.  
+  You might want to create it first before starting the lab.
 
 ## Client Load Balancing
 
@@ -580,9 +588,6 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
   
 ### Labs extras
 
-- Locally, create another `fortune-service` running on a different
-  port and observe that `container-to-container networking` service
-  talks to the two `fortune-service` in round-robin fashion
 - Under PCF, enable `container-to-container networking` 
  `greeting-ribbon-rest` and `fortune` service - and observe that
   services are now registered with IP-address/Port combincation
