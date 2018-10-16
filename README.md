@@ -6,7 +6,9 @@
 - Agenda overview
 - Students introduction
    - Your Java, Spring, Spring Boot experience
-   - Your PCF experience - have you taken PCF primer course?
+   - Your PCF experience
+     -   Have you taken PCF primer course?,
+     -   Have you done the 5 labs?
    - What you want to get out of this training
 - General structure of this training
    - 80% lab (and discussion), 20% lecture
