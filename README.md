@@ -1,5 +1,19 @@
 # [Cloud Native References and Errata]
 
+# Before we begin
+
+- Instructor introduction
+- Agenda overview
+- Students introduction
+   - Your Java, Spring, Spring Boot experience
+   - Your PCF experience
+   - What you want to get out of this training
+- Course material review
+   - GAIA course material
+   - Supplemental document
+- Logistics
+   - 2 breaks, 1-hour lunch at noon?
+
 # Introduction to The Cloud
 
 ## Push to the Cloud
@@ -363,7 +377,7 @@
 #### Write integration test code
 
   - In general, you should write test code first in the
-    sprit of TDD.  But later is better than none. 
+    sprit of TDD.   
     (See [example code](https://github.com/sashinpivotal/spring-boot-tdd) as a reference) 
     
 #### Deploying it to PCF
@@ -387,7 +401,7 @@
 
 ### Challenge questions
 
-- Which auto-configuration is used for auto-configuring 
+- Which auto-configuration class is used for auto-configuring 
   data source object?
 - What file tells Spring Boot which configuration 
   to load?
