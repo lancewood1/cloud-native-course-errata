@@ -377,6 +377,14 @@
     message value can be extracted
   - Run the application with `SPRING_PROFILES_ACTIVE` 
     environment variable set to either `dev` or `production`
+    
+    For Windows,
+    
+    ```
+    set SPRING_PROFILES_ACTIVE=production
+    mvn spring-boot:run
+    ```
+    
   - Create external property file(s) as opposed 
     to the property files
     inside the jar file
