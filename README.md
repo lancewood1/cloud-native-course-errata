@@ -161,7 +161,8 @@
 
 ### Lab Extras (for Scaling)
 
--   Try auto-scaling available in the App Manager as following
+-   [This is disabled in GAIA]
+    Try auto-scaling available in the App Manager as following
 
     - Start with 3 instances of `articulate`
     - Use `CPU utlization` so that it scales down to 1 when
@@ -225,6 +226,8 @@
 - From an application perspective, are managed services
   instances different from user provided service instances?
 - Is there a way to make your "non-managed service" "managed service"?
+- What `cf` command(s) can I use to find out what applications
+  are bound to a particular service instance?
 
 ### Lab extras
 
