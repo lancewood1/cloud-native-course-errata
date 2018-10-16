@@ -4,13 +4,16 @@
 
 - Instructor introduction
 - Agenda overview
+- General structure of this training
+   - 80% lab (and discussion), 20% lecture
+   - Collaboration (even pair programming) strongly encouraged
 - Students introduction
    - Your Java, Spring, Spring Boot experience
    - Your PCF experience
    - What you want to get out of this training
 - Course material review
    - GAIA course material
-   - Supplemental document
+   - Supplemental document (please bookmark this page)
 - Logistics
    - 2 breaks, 1-hour lunch at noon?
 
