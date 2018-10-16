@@ -488,7 +488,7 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
  	     
 
  	     ```
- 	     git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs 
+ 	     git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs spring-cloud-services-labs
  	     ```
 
 
