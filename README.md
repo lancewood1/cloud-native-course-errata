@@ -530,7 +530,20 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
 	```
 	
   Build and deploy your own quote server from 
-  [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)	
+  [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)	as following:
+  
+  -   Deploy one with a hostname `quote-service-<sid>-dev`
+  -   Deploy another one with a hostname `quite-service-<sid>-qa`
+
+  Or use the one provided by the instructor
+  
+  ```
+  quoteServiceURL: http://quote-server-sang-shin-dev.cfapps.io/quote
+  ```
+  
+- Creating a service instance of `p-config-server` takes a few
+  minutes.  You might want to create one before you finish
+  the rest of the lab.
  
 ### Tool Recommendations 
   
@@ -538,7 +551,6 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
   please feel free to use `Spring Boot Dashboard`
 - If you are using `Windows`, please feel free to use
   [ConEMU shell](https://conemu.github.io/) 
-
 
 ### Challenge questions
 
