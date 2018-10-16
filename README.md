@@ -378,7 +378,7 @@
   - Run the application with `SPRING_PROFILES_ACTIVE` 
     environment variable set to either `dev` or `production`
     
-    For Windows,
+    For Windows, use the following commands
     
     ```
     set SPRING_PROFILES_ACTIVE=production
