@@ -471,6 +471,9 @@
     [here](https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/build-info.html)
     
   - Deploy the application to the PCF
+  - If you are interested in Spring Boot 2.x Micrometer 
+    and Prometheus, please try this 
+    [lab](https://github.com/sashinpivotal/spring-boot-actuator-micrometer)
 
 ### Challenge questions
 
