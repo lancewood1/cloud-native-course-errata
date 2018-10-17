@@ -552,9 +552,11 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
  
 - If you have not set up `ssh` key (or somehow it is not working),
   use local `app-config` directory as your repository 
-  as a temporary means as shown below
+  as a temporary means.
+  So `application.yml` of the `config-server` application
+  can be set as following:
   
-   ```yml
+   ```
    server:
      port: 8888
 
@@ -566,9 +568,9 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
              uri: file:///C:\tmp\app-config
    ```
    
-   Or use `https` as shown below
+   Or you use `https` as shown below
    
-   ```yml
+   ```
    server:
      port: 8888
 
