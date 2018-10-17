@@ -583,6 +583,8 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
          server:
            git:
              uri: https://.../app-config.git
+             username: <username>
+             password: <password>
    ```
    
    
