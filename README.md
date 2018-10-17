@@ -557,24 +557,30 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
 
    ```
 
-- Please note that the quote server mentioned in the 
-  lab document as shown below is not working
+-   Please note that the quote server mentioned in the 
+    lab document as shown below is not working
 
-	```yml
-	quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
-	```
+	 ```
+	 quoteServiceURL: http://quote-service-dev.apps.dev.na-1.<company>.net/quote
+	 ```
 	
-  Build and deploy your own quote server from 
+    Build and deploy your own quote server from 
   [here](https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs/tree/master/quote-server)	as following:
   
-  -   Deploy one with a hostname `quote-service-<sid>-dev`
-  -   Deploy another one with a hostname `quite-service-<sid>-qa`
+    -   Deploy `dev` profile version with a hostname 
+        `quote-service-<sid>-dev`
+    -   Deploy `qa` profile version with a hostname 
+        `quite-service-<sid>-qa`
 
-  Or use the one provided by the instructor
+    Or use the ones provided by the instructor like following
   
-  ```
-  quoteServiceURL: http://quote-server-sang-shin-dev.cfapps.io/quote
-  ```
+    ```
+    quoteServiceURL: http://quote-server-sang-shin-dev.cfapps.io/quote
+    ```
+    
+    ```
+    quoteServiceURL: http://quote-server-sang-shin-qa.cfapps.io/quote
+    ```
  
 ### Tool Recommendations 
   
