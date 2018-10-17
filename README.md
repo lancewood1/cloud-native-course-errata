@@ -522,6 +522,16 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
  	     git clone https://github.com/pivotal-bill-kable/apps-spring-cloud-services-labs spring-cloud-services-labs
  	     ```
 
+## Importing `spring-cloud-services-labs` 
+
+-   If you are using IntelliJ, please import the projects
+    as following
+    
+    1.  Select `Import Project` from `Welcome` screen
+    2.  Open `spring-cloud-services-lab` directory
+    3.  Select `Maven` click `next`
+    4.  Check `search for projects recursively` (this is important)
+    5.  Click through the default settings
 
 ## Config Server
 
@@ -554,8 +564,25 @@ You will authenticate with Bitbucket/GitHub using `ssh` key.
          server:
            git:
              uri: file:///C:\tmp\app-config
-
    ```
+   
+   Or use `https` as shown below
+   
+   ```yml
+   server:
+     port: 8888
+
+   spring:
+     cloud:
+       config:
+         server:
+           git:
+             uri: https://.../app-config.git
+   ```
+   
+   
+
+### Before you start `Override Configuration Values By Profile` part of the lab
 
 -   Please note that the quote server mentioned in the 
     lab document as shown below is not working
