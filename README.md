@@ -905,7 +905,7 @@ I will be in the classroom from 8:15AM in case you need any
 help.
 
 If you have any questions/issues, please feel free to contact
-me (sashin@pivotal.io) before/during/after the training.
+me (<Instructor Name>@pivotal.io) before/during/after the training.
 
 Looking forward to seeing you all.
 
