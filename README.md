@@ -869,7 +869,7 @@ A few items I would like to communicate before the training:
   https://github.com/pivotal-bill-kable/cloud-native-course-errata/blob/master/README.md
   (Please bookmark this document along with the official one.)
  
-  This goal of this document is to supplement the official
+  The goal of this document is to supplement the official
   training material in the following aspects.
      
   - Known issues (in the lab document and code)
