@@ -208,7 +208,7 @@
     ```
     < gaia/attendee-service > cf delete-service attendee-service-upsi
     Really delete the service attendee-service-upsi?> yes
-    Deleting service attendee-service-upsi in org sashin-org / space jpmc as ..
+    Deleting service attendee-service-upsi in org sashin-org / space sashin-space as ..
     FAILED
     Cannot delete service instance, service keys and bindings must first be deleted
     ```
@@ -863,7 +863,7 @@ Folks,
 
 My name is <Instructor-Name>. I will be the instructor of the 2-day
 "GAIA Cloud Native Application with Spring Cloud" training,
-which starts on <Date> at JPMC campus in <City>.
+which starts on <Date> in <City>.
 
 A few items I would like to communicate before the training:
 
@@ -884,7 +884,7 @@ A few items I would like to communicate before the training:
   - Lab extras (in case you finish earlier than others)
   - References
 
-  Please also note that I, as non-JPMC employee, do not have
+  Please also note that I, as non-employee, do not have
   access to the official lab document - I am using pseudo
   lab document that is supposed to be close to what you
   have.
@@ -903,7 +903,7 @@ A few items I would like to communicate before the training:
   is configured as following
  
   - Being able to connect your GAIA API endpoint
-  - Being able to connect internal JPMC Maven repository: See
+  - Being able to connect internal Maven repository: See
     if you can build a simple Spring Boot app
    
 I will be in the classroom from 8:15AM in case you need any
