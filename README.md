@@ -486,6 +486,11 @@
 
 # Spring Cloud Services
 
+## Microservices - Not A Free Lunch!
+
+-   The slide link is broken, use
+    [this](http://highscalability.com/blog/2014/4/8/microservices-not-a-free-lunch.html)
+
 ## Setup for Bitbucket/GitHub
 
 You will authenticate with Bitbucket/GitHub using `ssh` key.
