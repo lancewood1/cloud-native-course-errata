@@ -927,7 +927,7 @@ Looking forward to seeing you all.
  Please read the "Setup for BitBucket/GitHub" section under  
  "Spring Cloud Services" of the reference document below
 
- https://github.com/pivotal-bill-kable/cloud-native-course-errata/ blob/master/README.md
+ https://github.com/pivotal-bill-kable/cloud-native-course-errata/blob/master/README.md
 
 -Lunchtime tech-talk
 
